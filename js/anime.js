@@ -1,7 +1,7 @@
 function init() {
     const slider = document.querySelector(".slider");
-    const nextBtn = slider.querySelector(".slider .nav .next");
-    const prevBtn = slider.querySelector(".slider .nav .prev");
+    //const nextBtn = slider.querySelector(".slider .nav .next");
+    //const prevBtn = slider.querySelector(".slider .nav .prev");
     const items = slider.querySelectorAll(".slider .item");
   
     let current = 0;
@@ -178,8 +178,8 @@ function init() {
       updateSlider(newIndex);
     }
   
-    nextBtn.onclick = next;
-    prevBtn.onclick = prev;
+    //nextBtn.onclick = next;
+    //prevBtn.onclick = prev;
   }
 
   document.addEventListener("DOMContentLoaded", init);
