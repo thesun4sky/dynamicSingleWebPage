@@ -35,7 +35,7 @@
 		<!-- anime JS -->
 		<script type="text/javascript" src="js/anime.js"></script>
 		<!-- partial -->
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js'></script><script  src="./script.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js'></script>
 
 		<script type="text/javascript">
 			var myScroll;
@@ -71,11 +71,7 @@
 					</div>
 					<span class="mouse">마우스 스크롤</span>
 				</div>
-				<div class="swiper-slide subBack slider">
-					<div class="nav">
-						<div class="next"></div>
-						<div class="prev"></div>
-					</div>
+				<div class="slider swiper-slide subBack">
 					<div class="sub1 item is-active">
 						<div class="content">
 							<div class="tableBack">
@@ -107,8 +103,12 @@
 								<div class="img img-4"><img src="images/sub_n01.png" /></div>
 							</div>
 						</div>
+						<span class="mouse">마우스 스크롤</span>
 					</div>
-					<div class="sub2 item">
+				</div>
+
+				<div class="slider swiper-slide subBack">
+					<div class="sub2 item is-active">
 						<div class="content">
 							<div class="tableBack">
 								<div class="cellBack cell2">
@@ -140,8 +140,11 @@
 								<div class="img img-4"><img src="images/sub_n01.png" /></div>
 							</div>
 						</div>
+						<span class="mouse">마우스 스크롤</span>
 					</div>
-					<div class="sub3 item">
+				</div>
+				<div class="slider swiper-slide subBack">
+					<div class="sub3 item is-active">
 						<div class="content">
 							<div class="tableBack">
 								<div class="cellBack cell3">
@@ -166,18 +169,63 @@
 							</div>
 						</div>
 						<div class="imgs" id="">
-								<div class="grid">
-									<div class="img img-1"><img src="images/sub_e01.png" /></div>
-									<div class="img img-2"><img src="images/sub_n02.png" /></div>
-									<div class="img img-3"><img src="images/sub_n03.png" /></div>
-									<div class="img img-4"><img src="images/sub_n01.png" /></div>
-								</div>
+							<div class="grid">
+								<div class="img img-1"><img src="images/sub_e01.png" /></div>
+								<div class="img img-2"><img src="images/sub_n02.png" /></div>
+								<div class="img img-3"><img src="images/sub_n03.png" /></div>
+								<div class="img img-4"><img src="images/sub_n01.png" /></div>
 							</div>
+						</div>
+						<span class="mouse">마우스 스크롤</span>
+					</div>
+				</div>
+				<div class="swiper-slide mainBack">
+					<div class="tableBack">
+						<div class="cellBack main">
+							<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
+							<div>
+								<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">찾아오는길</button>
+							</div>
+						</div>
+					</div>
+					<span class="mouse">마우스 스크롤</span>
+				</div>
+				<div class="swiper-slide mainBack">
+					<div class="tableBack">
+						<div class="cellBack main">
+							<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
+							<div>
+								<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">경기장안내</button>
+							</div>
+						</div>
+					</div>
+					<span class="mouse">마우스 스크롤</span>
+				</div>
+				<div class="swiper-slide mainBack">
+					<div class="tableBack">
+						<div class="cellBack main">
+							<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
+							<div>
+								<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">응원문화</button>
+							</div>
+						</div>
+					</div>
+					<span class="mouse">마우스 스크롤</span>
+				</div>
+
+				<div class="swiper-slide mainBack">
+					<div class="tableBack">
+						<div class="cellBack main">
+							<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
+							<div>
+								<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">SNS</button>
+							</div>
+						</div>
 					</div>
 					<span class="mouse">마우스 스크롤</span>
 				</div>
 				<script>
-					
+					/*
 				$(".sub1").on('mousewheel',function(e){
 					var wheel = e.originalEvent.wheelDelta;
 					
@@ -224,20 +272,13 @@
 						addHoverTarget: '',
 						interval: 3500
 					}
-				});
+				});*/
 				</script>
 			</div>
+			<div class="swiper-pagination sideMenu"></div>
 		</div>
 		<div class="bgMain">
 			<img src="images/main/main_001.jpg"/>
-		</div>
-		<div class="sideMenu">
-			<div><button class="topBtn" onclick="javascript:"><img src="images/sidemenu/1.png"/></button></div>
-			<div><button class="ticketBtn" onclick="javascript:"><img src="images/sidemenu/2.png"/></button></div>
-			<div><button class="roadBtn" onclick="javascript:"><img src="images/sidemenu/3.png"/></button></div>
-			<div><button class="placeBtn" onclick="javascript:"><img src="images/sidemenu/4.png"/></button></div>
-			<div><button class="cheerBtn" onclick="javascript:"><img src="images/sidemenu/5.png"/></button></div>
-			<div><button class="snsBtn" onclick="javascript:"><img src="images/sidemenu/6.png"/></button></div>
 		</div>
 		<div class="logo">
 			<img src="images/fix/logo.png"/>
@@ -1789,18 +1830,19 @@
 				loaded();
 			});
 		});
-		var swiper1 = new Swiper('.swiper1', {
+		var swiper1 = new Swiper('.swiper-container', {
 			direction: 'vertical',
 			slidesPerView: 1,
-			paginationClickable: true,
 			mousewheelControl: true,
-            onSlideChangeStart: function (swiper){
-				if (swiper1.activeIndex == 1){
-				} else if (swiper1.activeIndex == 2){
-				} else if (swiper1.activeIndex == 3){
-				} else if (swiper1.activeIndex != 3){
-				}
-			}
+			pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+				renderBullet: function (index, className) {
+					if(index==2 || index==3) return '<div class="'+ className  + '" style="height: 0px;"></div>';
+					else if(index>3) return '<div class="'+ className  + '"><button class="' + (index - 1) + 'SideBtn"><img src="images/sidemenu/' + (index - 1) + '.png"/></button></div>';
+					else return '<div class="'+ className  + '"><button class="' + (index + 1) + 'SideBtn"><img src="images/sidemenu/' + (index + 1) + '.png"/></button></div>';
+			    }
+		    }
 		});
         /*$('.main .btn1').on('click', function(){
             swiper1.slideTo(1, 1000);
