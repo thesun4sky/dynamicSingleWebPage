@@ -1836,7 +1836,7 @@
 		var swiper1 = new Swiper('.swiper-container', {
 			direction: 'vertical',
 			slidesPerView: 1,
-			mousewheelControl: true,
+			paginationClickable: true,
 			pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -1845,7 +1845,12 @@
 					else if(index>3) return '<div class="'+ className  + '"><button class="' + (index - 1) + 'SideBtn"><img src="images/sidemenu/' + (index - 1) + '.png"/></button></div>';
 					else return '<div class="'+ className  + '"><button class="' + (index + 1) + 'SideBtn"><img src="images/sidemenu/' + (index + 1) + '.png"/></button></div>';
 			    }
-		    }
+		    },
+			mousewheel : {
+				invert : false      // 마우스휠사용
+			},
+			parallax: true,
+			speed: 600
 		});
         /*$('.main .btn1').on('click', function(){
             swiper1.slideTo(1, 1000);

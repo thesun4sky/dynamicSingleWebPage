@@ -61,7 +61,7 @@ button {cursor:pointer;}
 }
 .logo img {width:150px;height:auto;
 }
-.sideMenu {position:fixed;top:50%;left:7%;z-index:99;border: 0px;
+.sideMenu {width:150px; position:fixed;top:50%;left:7%;z-index:99;border: 0px;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
@@ -300,7 +300,6 @@ button {cursor:pointer;}
 	.subBack dl dt strong span {font-size:70px;}
 	.subBack dl dt div {font-size:33px;}
 	.subBack dl dd {font-size:16px;}
-	.subBack dl {width:calc(100% - 600px);}
 	.subBack .cellBack {padding:20px 50px;}
 	.subSliderBack {width:580px;}
 }
