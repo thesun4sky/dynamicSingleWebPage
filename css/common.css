@@ -15,7 +15,7 @@
 hr {display:none;}
 dl,ul,ol,menu,li {list-style:none;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,label,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0; border:0;}
-html, body {height:100%;font-size:12px;}
+html, body {height:100%;font-size:12px; overflow:hidden;}
 blockquote, q {quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after {content:"";content:none;}
 a {text-decoration:none;color:#555555;}
@@ -34,8 +34,10 @@ button {cursor:pointer;}
 .swiper1 {position:fixed;top:0;right:0;bottom:0;left:0;z-index:5;width:100%;height:100%;margin:0 auto;background:rgba(0,0,0,.4);}
 .swiper1 .swiper-slide .tableBack {display:table;width:100%;height:100%;}
 .swiper1 .swiper-slide .cellBack {display:table-cell;width:100%;height:100%;text-align:center;vertical-align:middle;}
+.road_bg {}
+.PopupBTN1_1 {background: white;}
 .swiper-slide .main div button,
-.swiper-slide dl dd button {width:200px;height:62px;font-size:18px;font-family:'Noto Sans KR';color:#fff;border:1px solid #fff;background:none;transition:background-color 0.6s, border-color 0.6s, color 0.6s;}
+.swiper-slide dl dd button {width:180px;height:57px;font-size:16px; margin-right: 10px; font-family:'Noto Sans KR';color:#fff;border:1px solid #fff;background:none;transition:background-color 0.6s, border-color 0.6s, color 0.6s;}
 .main h1 {margin:0 auto;display:inline-block;margin-bottom:120px;opacity:0;transition:opacity 2.2s, margin-bottom 1.2s;}
 .mainBack.swiper-slide-active .main h1 {margin-bottom:0;opacity:1;}
 .main h1 img {width:100%;max-width:552px;}
@@ -46,15 +48,16 @@ button {cursor:pointer;}
 .main div button.btn3:hover {border-color:#d80715;background:#d80715;}
 .mouse {position:absolute;left:50%;margin-left:-22px;bottom:40px;z-index:10;display:inline-block;opacity:0;transition:opacity 2.2s .8s;width:44px;height:66px;overflow:hidden;text-indent:-9999px;background: url("../images/icon_mouse.png") no-repeat;}
 .swiper-slide.swiper-slide-active .mouse {opacity:1;}
-.bgMain {position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;max-width:100% !important;}
-.bgMain img {position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;
+.bgMain .road_bg .stadium_bg .supporter_bg {position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;max-width:100% !important;}
+.bgMain img, .road_bg > img, .stadium_bg > img, .supporter_bg > img {position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
-.logo {position:fixed;top:3%;right:3%;z-index:99;
+.road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
+.logo {position:fixed;top:7%;right:7%;z-index:99;
 }
 .logo img {width:150px;height:auto;
 }
@@ -76,18 +79,18 @@ button {cursor:pointer;}
 .sub2 {background:rgba(22,0,0,.5);}
 .sub3 {background:rgba(91,62,7,.5);}
 .subBack .cellBack {padding:0 164px;box-sizing:border-box;}
-.subBack .cell1{background-color:rgba(14, 76, 142, 0.5);}
-.subBack .cell2{background-color:rgba(255, 0, 0, 0.5);}
-.subBack .cell3{background-color:rgba(255, 136, 0, 0.5);}
+.subBack .cell1{background-color:rgba(14, 76, 142, 0.6);}
+.subBack .cell2{background-color:rgba(145, 29, 42, 0.6);}
+.subBack .cell3{background-color:rgba(162, 107, 17, 0.6);}
 .subBack dl {text-align:center;margin-top:120px;opacity:0;transition:opacity 2.2s, margin-top 1.2s;}
 .subBack.swiper-slide-active dl {margin-top:0;opacity:1;}
 .subBack dl * {font-family:'Noto Sans KR';color:#fff;}
-.subBack dl dt strong {font-size:42px;font-weight:bold;}
-.subBack dl dt strong span {font-size:100px;}
-.subBack dl dt div {padding:15px 0 0 0;font-size:40px;font-weight:100;letter-spacing:0;}
-.subBack dl dd {padding:50px 0 0 0;font-size:18px;}
+.subBack dl dt strong {font-size:60px;font-weight:bold;}
+.subBack dl dt strong span {font-size:80px;}
+.subBack dl dt div {padding:15px 0 0 0;font-size:35px;font-weight:100;letter-spacing:0;}
+.subBack dl dd {padding:50px 0 0 0;font-size:17px;}
 .subBack dl dd:after {content: '';display:table;clear:both;}
-.subBack dl dd.txt {letter-spacing:0;}
+.subBack dl dd.txt {letter-spacing:0;font-weight:300; line-height: 1.5;}
 .subBack .swiper-slide img {width:100%;}
 .sub1.subBack dl dt strong span {color:#ffffff;}
 .sub2.subBack dl dt strong span {color:#ffffff;}
@@ -115,6 +118,7 @@ button {cursor:pointer;}
 	color: #fff;
 	background: #007aff;
   }
+
 .ts-paging {padding-top:20px;}
 .ts-prev,
 .ts-next {position:absolute;top:50%;margin-top:-68px;cursor:pointer;display:inline-block;width:43px;height:96px;text-indent:-9999px;overflow:hidden;}
@@ -133,6 +137,8 @@ button {cursor:pointer;}
 .popUp .bottom span {font-size:16px;}
 .popUp .bottom button.btn1 {float:right; width:200px;height:62px;font-size:18px;font-family:'Noto Sans KR';color:#fff;border:1px solid #fff;background:none;transition:background-color 0.6s, border-color 0.6s, color 0.6s;}
 .popUp .bottom button.btn1:hover {color:#222;background:#fff;}
+
+
 /**/
 .LocatePop {width:830px;margin:-390px 0 0 -415px;}
 .LocatePop img {display:block;}
@@ -230,7 +236,7 @@ button {cursor:pointer;}
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);}
 .selectSet select {position:relative;z-index:2;padding:0 35px 0 15px;width:100%;height:56px;box-sizing:border-box;border:1px solid #ccc;background:transparent;border-radius:0;
-	-webkit-appearance:none; 
+	-webkit-appearance:none;
 	-moz-appearance:none;
 	appearance:none}
 .selectSet select:disabled {color:#666;background:#ddd;opacity:0.5;}
@@ -318,7 +324,7 @@ button {cursor:pointer;}
 	.subBack dl dd {padding:18px 0 0 0;font-size:12px;}
 	.subBack dl dd button {float:left;width:calc((100% - 10px)/2);}
 	.subBack dl dd button:last-child {float:right;}
-	.subBack dl dd.txt {letter-spacing:0;}
+	.subBack dl dd .txt {letter-spacing:0; font-weight:300;}
 	.subBack .cellBack {padding:20px 20px 100px;}
 	.subSliderBack {float:none;width:100%;padding-top:40px;margin-left:0;opacity:0;transition:opacity 1s;}
 	.subBack.swiper-slide-active .subSliderBack {margin-left:0;opacity:1;}
