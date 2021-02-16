@@ -58,23 +58,52 @@ button {cursor:pointer;}
 }
 .topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px;}
 .topBack > strong {font-size: 20px;}
+.topBackRoad {margin-top: 5%}
 .road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
 .logo {position:fixed;top:7%;right:7%;z-index:99;
 }
 .logo img {width:150px;height:auto;
 }
-.sideMenu {width:150px; position:fixed;top:50%;left:7%;z-index:99;border: 0px;
+.swiper-pagination-side {width:150px; position:fixed;top:50%;left:7%;z-index:99;border: 0px;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
-.sideMenu div {width:87px; height:87px; margin:0px;
+.swiper-pagination-side div {width:87px; height:87px; margin:0px;
 }
-.sideMenu div button {width:87px; height:87px; margin:0px;
+.swiper-pagination-side div button {width:87px; height:87px; margin:0px;
 }
-.sideMenu div button img {width:87px; height:87px;
+.swiper-pagination-side div button img {width:87px; height:87px;
+}
+.swiper-container-road {
+	position:absolute;
+	width:70%;
+	left:20%;
+}
+.swiper-pagination-road  {width:300px; position:absolute;bottom:10%;left:50%; margin-left:150px; z-index:99;border: 0px;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+.swiper-pagination-road div {width:87px; height:87px; margin:0px;
+}
+.swiper-pagination-road div button {
+	width:200px;
+	height:87px;
+	margin:5px!important;
+	color: #3f3f3f;
+}
+.swiper-pagination-road div button:hover {
+	width:200px;
+	height:87px;
+	margin:5px!important;
+	border-color:#ffffff;
+	background:#ffffff;
+	color: #e9aa11;
 }
 .bgVideo video.mblock {display:none;}
 .sub1 {background:rgba(2,31,62,.5);}
@@ -117,12 +146,15 @@ button {cursor:pointer;}
 	background: rgba(0, 0, 0, 0.2);
 	margin: 0 !important;
   }
-
   .swiper-pagination-bullet-active {
 	color: #fff;
 	background: #007aff;
   }
-
+.findRoad {width: 70%; border: 0px;}
+.swiper-slide-road > p {
+	font-size:16px;
+	color: white;
+}
 .ts-paging {padding-top:20px;}
 .ts-prev,
 .ts-next {position:absolute;top:50%;margin-top:-68px;cursor:pointer;display:inline-block;width:43px;height:96px;text-indent:-9999px;overflow:hidden;}
