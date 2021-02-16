@@ -56,6 +56,8 @@ button {cursor:pointer;}
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+.topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px;}
+.topBack > strong {font-size: 20px;}
 .road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
 .logo {position:fixed;top:7%;right:7%;z-index:99;
 }
@@ -82,7 +84,8 @@ button {cursor:pointer;}
 .subBack .cell1{background-color:rgba(14, 76, 142, 0.6);}
 .subBack .cell2{background-color:rgba(145, 29, 42, 0.6);}
 .subBack .cell3{background-color:rgba(162, 107, 17, 0.6);}
-.subBack dl {text-align:center;margin-top:120px;opacity:0;transition:opacity 2.2s, margin-top 1.2s;}
+.subBack dl {text-align:center;margin-top:-120px;opacity:0;transition:opacity 2.2s, margin-top 1.2s;transition-delay: 0.8s}
+.subBack .reverse {text-align:center;margin-top:300px;opacity:0;transition:opacity 2.2s, margin-top 1.2s;}
 .subBack.swiper-slide-active dl {margin-top:0;opacity:1;}
 .subBack dl * {font-family:'Noto Sans KR';color:#fff;}
 .subBack dl dt strong {font-size:60px;font-weight:bold;}
@@ -112,6 +115,7 @@ button {cursor:pointer;}
 	color: #000;
 	opacity: 1;
 	background: rgba(0, 0, 0, 0.2);
+	margin: 0 !important;
   }
 
   .swiper-pagination-bullet-active {
@@ -415,6 +419,5 @@ button {cursor:pointer;}
 	.exCostLayout .exCost3 .exLast dl dt {display:block;width:100%;font-size:14px;}
 	.exCostLayout .exCost3 .exLast dl dd {display:block;font-size:13px;}
 	.exCostLayout .exCost3 p {padding:15px 0 0;height:45px;font-size:12px;}
-
 
 }
