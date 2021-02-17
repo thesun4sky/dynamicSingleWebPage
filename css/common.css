@@ -58,11 +58,17 @@ button {cursor:pointer;}
 }
 .topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px;}
 .topBack > strong {font-size: 20px;}
-.topBackRoad {margin-top: 5%}
+.topBackSub {margin-top: 5%; z-index: 99;}
 .road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
 .logo {position:fixed;top:7%;right:7%;z-index:99;
 }
 .logo img {width:150px;height:auto;
+}
+.stadiumDl {
+	margin-left: 15%;
+}
+.stadiumDl * {
+	color: #4b4b4b !important;
 }
 .swiper-pagination-side {width:150px; position:fixed;top:50%;left:7%;z-index:99;border: 0px;
 	-webkit-transform: translateX(-50%) translateY(-50%);
@@ -175,7 +181,37 @@ button {cursor:pointer;}
 	font-size:16px;
 	color: white;
 }
-
+.stadiumImg {
+	position: relative;
+	z-index: 99;
+	width: 70%;
+	float: left;
+}
+.stadiumImg:hover {
+	cursor: pointer;
+}
+.stadiumText {
+	position: relative;
+	z-index: 99;
+	width: 30%;
+	float: left;
+	margin-left: -15%;
+}
+.stadiumText > img {
+	opacity: 1;
+	transition: opacity 2.2s, margin-top 1.2s;
+}
+.stadiumTextHide {
+	position: relative;
+	z-index: 99;
+	width: 30%;
+	float: left;
+}
+.stadiumTextHide > img {
+	opacity: 0;
+	margin-top: 20%;
+	transition: opacity 2.2s, margin-top 1.2s;
+}
 
 .ts-paging {padding-top:20px;}
 .ts-prev,

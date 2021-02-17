@@ -208,7 +208,7 @@
 		</div>
 		<div class="swiper-slide subBack">
 			<div class="tableBack">
-				<div class="topBack topBackRoad">
+				<div class="topBack topBackSub">
 					<dl class="reverse">
 						<dt>
 							<strong>
@@ -217,7 +217,8 @@
 						</dt>
 					</dl>
 				</div>
-				<div class="cellBack">
+				<div class="cellBack stadium_bg">
+					<img src="images/main/main_002.jpg"/>
 					<dt>
 						<dl>
 							<div class="swiper-container-road">
@@ -257,14 +258,29 @@
 			</div>
 			<span class="mouse">마우스 스크롤</span>
 		</div>
-		<div class="swiper-slide mainBack">
+		<div class="swiper-slide subBack">
 			<div class="tableBack">
-				<div class="cellBack main stadium_bg">
+				<div class="topBack topBackSub">
+					<dl class="reverse stadiumDl">
+						<dt>
+							<strong>
+								경기장 안내
+							</strong>
+						</dt>
+					</dl>
+				</div>
+				<div class="cellBack stadium_bg">
 					<img src="images/main/main_003.jpg"/>
-					<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
-					<div>
-						<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">경기장안내</button>
-					</div>
+					<dt>
+						<dl class="reverse stadiumDl">
+							<div class="stadiumImg">
+							 	<img src="images/staduim/map-1.png" width="80%"/>
+							</div>
+							<div class="stadiumTextHide">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+						</dl>
+					</dt>
 				</div>
 			</div>
 			<span class="mouse">마우스 스크롤</span>
@@ -1900,8 +1916,13 @@
 		});
 
 		$(".3SideBtn").click(function() {
-				$(".swiper-slide-second").attr("style","opacity:0.2;");
+			$(".swiper-slide-second").attr("style","opacity:0.2;");
 		});
+
+		$(".stadiumImg").click(function () {
+			$(".stadiumImg > img").attr("src","images/staduim/map-2.png");
+			$(".stadiumTextHide").attr("class","stadiumText");
+		})
 
 		setInterval(function(){
 			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second").attr("class").indexOf("swiper-slide-active") > 0){
