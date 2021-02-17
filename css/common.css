@@ -101,18 +101,25 @@ button {cursor:pointer;}
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
-.swiper-pagination-road div {width:87px; height:87px; margin:0px;
+.swiper-pagination-road {
+	position: relative !important;
+	left: 50% !important;
+	margin-left: auto !important;
+	margin-top: 50px !important;
 }
-.swiper-pagination-road div button {
-	width:100px;
-	height:87px;
-	margin:5px!important;
+
+.swiper-pagination-road div {
+	position: relative;
+	width:150px;
+	height:50px;
+	margin:5px !important;
 	padding-right: 30px;
 	color: #3f3f3f;
+	border-radius: unset !important;
 }
-.swiper-pagination-road div button:hover {
-	width:200px;
-	height:87px;
+.swiper-pagination-road div:hover {
+	width:150px;
+	height:50px;
 	margin:5px!important;
 	border-color:#ffffff;
 	background:#ffffff;
