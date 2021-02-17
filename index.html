@@ -223,33 +223,30 @@
 							<div class="swiper-container-road">
 								<div class="parallax-bg" style="background-image: url(images/main/main_003.jpg)" data-swiper-parallax="-23%"></div>
 								<div class="swiper-wrapper">
-									<div class="swiper-slide swiper-slide-road">
-										<div class="title" data-swiper-parallax="-300">Slide 1</div>
-										<div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-										<div class="text" data-swiper-parallax="-100">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
-												felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet
-												magna nec elit suscipit, ac laoreet nibh euismod. </p>
-										</div>
-									</div>
-									<div class="swiper-slide swiper-slide-road">
-										<div class="title" data-swiper-parallax="-300" data-swiper-parallax-opacity="0">Slide 2</div>
-										<div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-										<div class="text" data-swiper-parallax="-100">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
-												felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet
-												magna nec elit suscipit, ac laoreet nibh euismod.</p>
-										</div>
-									</div>
-									<div class="swiper-slide swiper-slide-road">
-										<div class="title" data-swiper-parallax="-300">Slide 3</div>
-										<div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-										<div class="text" data-swiper-parallax="-100">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
-												felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet
-												magna nec elit suscipit, ac laoreet nibh euismod.</p>
-										</div>
-									</div>
+
+
+											<div class="swiper-slide swiper-slide-road">
+												<div class="road-img"  data-swiper-parallax-opacity="0.2"> <img src="images/road/1-1.png" /> <img src="images/road/1-2.png" /> </div>
+											</div>
+
+											<div class="swiper-slide swiper-slide-road swiper-slide-second">
+												<div class="road-img" data-swiper-parallax-opacity="0.2"> <img src="images/road/2-1.png" /> <img src="images/road/2-2.png" /> </div>
+											</div>
+
+
+											<div class="swiper-slide swiper-slide-road">
+												<div class="road-img" data-swiper-parallax-opacity="0.2"> <img src="images/road/3-1.png" /> <img src="images/road/3-2.png" /> </div>
+											</div>
+
+											<div class="swiper-slide swiper-slide-road">
+												<div class="road-img" data-swiper-parallax-opacity="0.2"> <img src="images/road/4-1.png" /> <img src="images/road/4-2.png" /> </div>
+											</div>
+
+											<div class="swiper-slide swiper-slide-road">
+												<div class="road-img" data-swiper-parallax-opacity="0.2"> <img src="images/road/5-1.png" /> <img src="images/road/5-2.png" /> </div>
+											</div>
+
+
 								</div>
 								<!-- Add Pagination -->
 								<div class="swiper-pagination swiper-pagination-road swiper-pagination-white"></div>
@@ -1901,6 +1898,18 @@
 			$(".exCost1").show();
 			loaded();
 		});
+
+		$(".3SideBtn").click(function() {
+				$(".swiper-slide-second").attr("style","opacity:0.2;");
+		});
+
+		setInterval(function(){
+			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second").attr("class").indexOf("swiper-slide-active") > 0){
+				$(".swiper-slide-second").attr("style","opacity:1;");
+			}else{
+				$(".swiper-slide-second").css('opacity') == '0.2';
+			}
+		}, 100);
 	});
 	var swiper1 = new Swiper('.swiper-container-side', {
 		direction: 'vertical',
@@ -1928,10 +1937,11 @@
 			el: '.swiper-pagination-road',
 			clickable: true,
 			renderBullet: function (index, className) {
-				if(index==0) return '<div class="'+ className  + '"><button>수원역/화서역</button></div>';
+				if(index==0) return '<div class="'+ className  + ' sh1"><button>수원역/화서역</button></div>';
 				else if(index==1) return '<div class="'+ className  + '"><button>분당선/신분당선</button></div>';
 				else if (index==2) return '<div class="'+ className  + '"><button>서울시외버스</button></div>';
 				else if (index==3) return '<div class="'+ className  + '"><button>자가용</button></div>';
+				else if (index==4) return '<div class="'+ className  + '"><button>관람 후 버스이용 </button></div>';
 			}
 		},
 	});
