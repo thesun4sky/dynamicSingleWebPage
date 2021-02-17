@@ -285,19 +285,107 @@
 			</div>
 			<span class="mouse">마우스 스크롤</span>
 		</div>
-		<div class="swiper-slide mainBack">
+		<div class="swiper-slide subBack">
 			<div class="tableBack">
-				<div class="cellBack main supporter_bg">
+				<div class="topBack topBackSub">
+					<dl class="reverse">
+						<dt>
+							<strong>
+								응원문화
+							</strong>
+						</dt>
+					</dl>
+				</div>
+				<div class="cellBack supporter_bg">
 					<img src="images/main/main_004.jpg"/>
-					<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
-					<div>
-						<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">응원문화</button>
-					</div>
+					<dt>
+						<dl>
+							<div class="swiper-container-supporter">
+								<div class="parallax-bg" style="background-image: url(images/main/main_003.jpg)" data-swiper-parallax="-23%"></div>
+								<div class="swiper-wrapper">
+									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+										<div data-swiper-parallax-opacity="0.2">
+											<a href="javascript:audioPlay(1)">
+												<img src="images/supporter/sp1.jpg" />
+												<div id="audio-img1" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+										<div class="road-img" data-swiper-parallax-opacity="0.2">
+											<a href="javascript:audioPlay(2)">
+												<img src="images/supporter/sp2.jpg" />
+												<div id="audio-img2" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+										<div class="road-img" data-swiper-parallax-opacity="0.2">
+											<a href="javascript:audioPlay(3)">
+												<img src="images/supporter/sp3.jpg" />
+												<div id="audio-img3" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+											</a>
+										</div>
+									</div>
+									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+										<div class="road-img" data-swiper-parallax-opacity="0.2">
+											<a href="javascript:audioPlay(4)">
+												<img src="images/supporter/sp4.jpg" />
+												<div id="audio-img4" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next swiper-button-next-supporter swiper-button-white"></div>
+								<div class="swiper-button-prev swiper-button-prev-supporter swiper-button-white"></div>
+							</div>
+						</dl>
+					</dt>
 				</div>
 			</div>
 			<span class="mouse">마우스 스크롤</span>
 		</div>
+		<script>
+			var audio1 = new Audio("audio/sp1.mp3");
+			var audio2 = new Audio("audio/sp2.mp3");
+			var audio3 = new Audio("audio/sp3.mp3");
+			var audio4 = new Audio("audio/sp4.mp3");
+			var stop1 = document.getElementById("audio-img1");
+			var stop2 = document.getElementById("audio-img2");
+			var stop3 = document.getElementById("audio-img3");
+			var stop4 = document.getElementById("audio-img4");
+			var prev = 0;
 
+			function audioPlay(num){
+				audio1.pause();
+				audio2.pause();
+				audio3.pause();
+				audio4.pause();
+				stop1.style.opacity = '0';
+				stop2.style.opacity = '0';
+				stop3.style.opacity = '0';
+				stop4.style.opacity = '0';
+				if(prev!=num) {
+					prev = num;
+					if (num == 1) {
+						audio1.play();
+						stop1.style.opacity = '1';
+					} else if (num == 2) {
+						audio2.play();
+						stop2.style.opacity = '1';
+					} else if (num == 3) {
+						audio3.play();
+						stop3.style.opacity = '1';
+					} else if (num == 4) {
+						audio4.play();
+						stop4.style.opacity = '1';
+					}
+				}else{
+					prev = 0;
+				}
+			}
+		</script>
 		<div class="swiper-slide mainBack">
 			<div class="tableBack">
 				<div class="cellBack main">
@@ -1964,6 +2052,23 @@
 				else if (index==3) return '<div class="'+ className  + '">자가용</div>';
 				else if (index==4) return '<div class="'+ className  + '">관람 후 버스이용</div>';
 			}
+		},
+	});
+	var swiper3 = new Swiper('.swiper-container-supporter', {
+		effect: 'coverflow',
+		grabCursor: true,
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		coverflowEffect: {
+			rotate: 20,
+			stretch: 0,
+			depth: 100,
+			modifier: 1,
+			slideShadows: true,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next-supporter',
+			prevEl: '.swiper-button-prev-supporter',
 		},
 	});
 	/*$('.main .btn1').on('click', function(){
