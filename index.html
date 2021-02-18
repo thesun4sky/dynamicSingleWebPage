@@ -211,7 +211,7 @@
 				<div class="topBack topBackSub">
 					<dl class="reverse">
 						<dt>
-							<strong>
+							<strong style="color: white;">
 								찾아오는 길
 							</strong>
 						</dt>
@@ -307,7 +307,7 @@
 										<div data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(1)">
 												<img src="images/supporter/sp1.jpg" />
-												<div id="audio-img1" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+												<div id="audio-img1" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="width: 100% !important;"/></div>
 											</a>
 										</div>
 									</div>
@@ -315,7 +315,7 @@
 										<div class="road-img" data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(2)">
 												<img src="images/supporter/sp2.jpg" />
-												<div id="audio-img2" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+												<div id="audio-img2" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="width: 100% !important;"/></div>
 											</a>
 										</div>
 									</div>
@@ -323,7 +323,7 @@
 										<div class="road-img" data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(3)">
 												<img src="images/supporter/sp3.jpg" />
-												<div id="audio-img3" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+												<div id="audio-img3" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="width: 100% !important;"/></div>
 											</a>
 										</div>
 									</div>
@@ -331,7 +331,7 @@
 										<div class="road-img" data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(4)">
 												<img src="images/supporter/sp4.jpg" />
-												<div id="audio-img4" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="margin-left: -1px; width: 310px !important;"/></div>
+												<div id="audio-img4" class="audio-img" style="opacity: 0; transition: opacity 0.5s"><img src="images/supporter/spStop.png" style="width: 100% !important;"/></div>
 											</a>
 										</div>
 									</div>
@@ -386,17 +386,24 @@
 				}
 			}
 		</script>
-		<div class="swiper-slide mainBack">
+
+			<div class="swiper-slide mainBack">
 			<div class="tableBack">
-				<div class="cellBack main">
-					<h1><img src="images/img_tt.png" alt="수원삼성블루윙즈"/></h1>
+
+				<div class="cellBack main SNStap">
+
+					<h1>수원삼성축구단의 SNS를 팔로우 하시면, </br>
+누구보다 빠르게 수원삼성축구단의 홈경기 소식과 이벤트를 만나실 수 있습니다!</h1>
 					<div>
-						<button class="btn1" onclick="location.href='http://www.bluewings.kr/home'">SNS</button>
+						<button class="btn1" onclick="window.open('https://www.facebook.com/SuwonSamsungFC')"><img src="images/sns/fb.jpg" ></button>
+						<button class="btn2" onclick="window.open('https://www.instagram.com/suwonsamsungfc/')"><img src="images/sns/ins.jpg" ></button>
+						<button class="btn3" onclick="window.open('https://www.youtube.com/user/bluewingsfc')"><img src="images/sns/you.jpg" ></button>
 					</div>
 				</div>
 			</div>
 			<span class="mouse">마우스 스크롤</span>
 		</div>
+
 		<script>
 			/*
         $(".sub1").on('mousewheel',function(e){
@@ -2046,7 +2053,7 @@
 			el: '.swiper-pagination-road',
 			clickable: true,
 			renderBullet: function (index, className) {
-				if(index==0) return '<div class="'+ className  + '">수원역/화서역</div>';
+				if(index==0) return '<div class="'+ className  +'">수원역/화서역</div>';
 				else if(index==1) return '<div class="'+ className  + '">분당선/신분당선</div>';
 				else if (index==2) return '<div class="'+ className  + '">서울시외버스</div>';
 				else if (index==3) return '<div class="'+ className  + '">자가용</div>';

@@ -37,7 +37,7 @@ button {cursor:pointer;}
 .road_bg {}
 .PopupBTN1_1 {background: white;}
 .swiper-slide .main div button,
-.swiper-slide dl dd button {width:180px;height:57px;font-size:16px; margin-right: 10px; font-family:'Noto Sans KR';color:#fff;border:1px solid #fff;background:none;transition:background-color 0.6s, border-color 0.6s, color 0.6s;}
+.swiper-slide dl dd button {width:180px;height:57px;font-size:16px;  font-family:'Noto Sans KR';color:#fff;border:1px solid #fff;background:none;transition:background-color 0.6s, border-color 0.6s, color 0.6s;}
 .supporterBtn {z-index: 9; width:120px;height:37px;font-size:16px; margin-right: 10px; font-family:'Noto Sans KR';color:#4b4b4b !important;border:1px solid #3f3f3f;background:none;transition:background-color 0.6s, border-color 0.6s, color 0.6s;}
 .audio-img {position: absolute; top: 0px;}
 .main h1 {margin:0 auto;display:inline-block;margin-bottom:120px;opacity:0;transition:opacity 2.2s, margin-bottom 1.2s;}
@@ -58,7 +58,7 @@ button {cursor:pointer;}
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
-.topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px;}
+.topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px; text-decoration: underline; text-underline-position: under;}
 .topBack > strong {font-size: 20px;}
 .topBackSub {margin-top: 5%; z-index: 99;}
 .road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
@@ -91,9 +91,9 @@ button {cursor:pointer;}
 	left:17%; top: 25%;
 }
 .swiper-slide-road img {
-		width: 40%;
+		width: 35%;
     position: relative;
-    left: 3%;
+    left: 4%;
 		display: block;
 		float: left;
 	  margin-right: 5%;
@@ -111,7 +111,7 @@ button {cursor:pointer;}
 .swiper-slide-supporter img {
 	background-position: center;
 	background-size: cover;
-	width: 309px !important;
+	width: 100% !important;
 	position: relative;
 	left: 3%;
 	display: block;
@@ -149,9 +149,10 @@ button {cursor:pointer;}
 	width:150px;
 	height:50px;
 	margin:5px !important;
-	padding-right: 30px;
+	padding-top: 15px;
 	color: #3f3f3f;
 	border-radius: unset !important;
+	border: 1px solid white;
 }
 .swiper-pagination-road div:hover {
 	width:150px;
@@ -159,7 +160,8 @@ button {cursor:pointer;}
 	margin:5px!important;
 	border-color:#ffffff;
 	background:#ffffff;
-	color: #e9aa11;
+	color: rgba(14, 76, 142);
+	font-weight: 700;
 }
 .supporterBtn {
 	position: relative;
@@ -177,7 +179,7 @@ button {cursor:pointer;}
 .subBack .reverse {text-align:center; margin-top:500px;opacity:0;transition:opacity 2.2s, margin-top 1.2s;}
 .subBack.swiper-slide-active dl {margin-top:0px;opacity:1;}
 .subBack dl * {font-family:'Noto Sans KR';color:#fff;}
-.subBack dl dt strong {font-size:30px;font-weight:bold;}
+.subBack dl dt strong {font-size:30px;font-weight:bold; }
 .subBack dl dt strong span {font-size:80px;}
 .subBack dl dt div {padding:15px 0 0 0;font-size:35px;font-weight:100;letter-spacing:0;}
 .subBack dl dd {padding:50px 0 0 0;font-size:17px;}
@@ -200,15 +202,17 @@ button {cursor:pointer;}
 	height: 20px;
 	text-align: center;
 	line-height: 20px;
-	font-size: 12px;
+	font-size: 14px;
 	color: #000;
 	opacity: 1;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0);
 	margin: 0 !important;
   }
   .swiper-pagination-bullet-active {
-	color: #fff;
-	background: #007aff;
+	color: rgb(14, 76, 142) !important;
+	background: white;
+	font-weight: 700;
+
   }
 .findRoad {width: 70%; border: 0px;}
 .swiper-slide-road > p {
@@ -423,6 +427,9 @@ button {cursor:pointer;}
 .exCostLayout .exCost3 .exLast dl dd li:before {content:"선택"counters(item, ".") ". ";}
 .exCostLayout .exCost3 p {padding:20px 0 0;height:55px;text-align:center;word-break:keep-all;}
 
+.SNStap h1 {font-family:notosanskr; font-size: 25px; font-weight: 600; color:white;}
+.SNStap img {width:200px; margin-right:20px;}
+.SNStap button {border: 0 !important; margin-right: 40px !important;}
 @media screen and (max-width:1540px){
 	.subBack dl dt strong {font-size:33px;}
 	.subBack dl dt strong span {font-size:70px;}
@@ -544,5 +551,7 @@ button {cursor:pointer;}
 	.exCostLayout .exCost3 .exLast dl dd {display:block;font-size:13px;}
 	.exCostLayout .exCost3 p {padding:15px 0 0;height:45px;font-size:12px;}
 
+	.SNStap {color:white; }
+	.SNStap h1 {font-size: 20px; font-weight: 700; color:white;}
 
 }
