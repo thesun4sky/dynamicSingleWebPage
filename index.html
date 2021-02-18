@@ -2020,11 +2020,19 @@
 		})
 
 		setInterval(function(){
+			/** 찾아오는길 두번째 슬라이드 반투명 처리 **/
 			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second").attr("class").indexOf("swiper-slide-active") > 0){
 				$(".swiper-slide-second").attr("style","opacity:1;");
 			}else{
 				$(".swiper-slide-second").css('opacity') == '0.2';
 			}
+
+			if($(".swiper-slide-active")[0].id != "mainBack"){
+				$(".logo").attr("style","opacity:1;");
+			}else {
+				$(".logo").attr("style","opacity:0;");
+			}
+
 		}, 100);
 	});
 	var swiper1 = new Swiper('.swiper-container-side', {
