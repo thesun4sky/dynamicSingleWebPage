@@ -40,7 +40,8 @@ a {
 
 .slider .item .imgs {
   position: relative;
-  width: 60%;
+  height: 120%;
+  width: 1200px;
   padding-top: 60%;
 }
 .slider .item .imgs .grid {
