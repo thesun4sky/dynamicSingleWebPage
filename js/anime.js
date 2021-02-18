@@ -1,18 +1,18 @@
 function init() {
-    const slider = document.querySelector(".slider");
-    //const nextBtn = slider.querySelector(".slider .nav .next");
-    //const prevBtn = slider.querySelector(".slider .nav .prev");
-    const items = slider.querySelectorAll(".slider .item");
-  
+
+    const nextBtn1 = document.querySelector(".slider1 .nav .next");
+    const prevBtn1 = document.querySelector(".slider1 .nav .prev");
+    const items1 = document.querySelectorAll(".slider1 .item");
+
+    const nextBtn2 = document.querySelector(".slider2 .nav .next");
+    const prevBtn2 = document.querySelector(".slider2 .nav .prev");
+    const items2 = document.querySelectorAll(".slider2 .item");
+
+    const nextBtn3 = document.querySelector(".slider3 .nav .next");
+    const prevBtn3 = document.querySelector(".slider3 .nav .prev");
+    const items3 = document.querySelectorAll(".slider3 .item");
+
     let current = 0;
-  
-    items.forEach((item) => {
-      // const textWrapper = item.querySelector(".tableBack");
-      // textWrapper.innerHTML = textWrapper.textContent.replace(
-      //   /\S/g,
-      //   "<span class='letter'>$&</span>"
-      // );
-    });
   
     function anim(current, next, callback) {
       const currentImgs = current.querySelectorAll(".img");
@@ -37,7 +37,7 @@ function init() {
         /*clipPath: ['polygon(0 0, 100% 0, 100% 100%, 0% 100%)', 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)'],*/
         opacity: [1, 0],
         easing: "easeInQuint",
-        duration: 600,
+        duration: 200,
         delay: (el, i) => 10 * (i + 1)
       })
         .add(
@@ -151,8 +151,8 @@ function init() {
     let isPlaying = false;
   
     function updateSlider(newIndex) {
-      const currentItem = items[current];
-      const newItem = items[newIndex];
+      const currentItem = items2[current];
+      const newItem = items2[newIndex];
   
       function callback() {
         currentItem.classList.remove("is-active");
@@ -163,23 +163,119 @@ function init() {
   
       anim(currentItem, newItem, callback);
     }
+
+
+    function showSlider1() {
+        const currentItem = items1[0];
+        const newItem = items1[1];
+
+        function callback() {
+            currentItem.classList.remove("is-active");
+            newItem.classList.add("is-active");
+            current = 1;
+            isPlaying = false;
+        }
+
+        anim(currentItem, newItem, callback);
+    }
+
+
+    function hideSlider1() {
+        const currentItem = items1[1];
+        const newItem = items1[0];
+
+        function callback() {
+            currentItem.classList.remove("is-active");
+            newItem.classList.add("is-active");
+            current = 0;
+            isPlaying = false;
+        }
+
+        anim(currentItem, newItem, callback);
+    }
+
+
+    function showSlider2() {
+        const currentItem = items2[0];
+        const newItem = items2[1];
+
+        function callback() {
+            currentItem.classList.remove("is-active");
+            newItem.classList.add("is-active");
+            current = 1;
+            isPlaying = false;
+        }
+
+        anim(currentItem, newItem, callback);
+    }
+
+
+    function hideSlider2() {
+        const currentItem = items2[1];
+        const newItem = items2[0];
+
+        function callback() {
+            currentItem.classList.remove("is-active");
+            newItem.classList.add("is-active");
+            current = 0;
+            isPlaying = false;
+        }
+
+        anim(currentItem, newItem, callback);
+    }
+
+
+    function showSlider3() {
+        const currentItem = items3[0];
+        const newItem = items3[1];
+
+        function callback() {
+            currentItem.classList.remove("is-active");
+            newItem.classList.add("is-active");
+            current = 1;
+            isPlaying = false;
+        }
+
+        anim(currentItem, newItem, callback);
+    }
+
+
+    function hideSlider3() {
+        const currentItem = items3[1];
+        const newItem = items3[0];
+
+        function callback() {
+            currentItem.classList.remove("is-active");
+            newItem.classList.add("is-active");
+            current = 0;
+            isPlaying = false;
+        }
+
+        anim(currentItem, newItem, callback);
+    }
   
     function next() {
       if (isPlaying) return;
       isPlaying = true;
-      const newIndex = current === items.length - 1 ? 0 : current + 1;
+      const newIndex = current === items2.length - 1 ? 0 : current + 1;
       updateSlider(newIndex);
     }
   
     function prev() {
       if (isPlaying) return;
       isPlaying = true;
-      const newIndex = current === 0 ? items.length - 1 : current - 1;
+      const newIndex = current === 0 ? items2.length - 1 : current - 1;
       updateSlider(newIndex);
     }
   
-    //nextBtn.onclick = next;
-    //prevBtn.onclick = prev;
+    nextBtn1.onclick = showSlider1;
+    prevBtn1.onclick = hideSlider1;
+
+    nextBtn2.onclick = showSlider2;
+    prevBtn2.onclick = hideSlider2;
+
+    nextBtn3.onclick = showSlider3;
+    prevBtn3.onclick = hideSlider3;
   }
 
   document.addEventListener("DOMContentLoaded", init);

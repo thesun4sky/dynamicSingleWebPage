@@ -71,8 +71,23 @@
 			</div>
 			<span class="mouse">마우스 스크롤</span>
 		</div>
-		<div class="slider swiper-slide subBack">
-			<div class="sub1 item is-active">
+		<div class="slider slider1 swiper-slide subBack">
+			<div class="cell1"></div>
+			<div class="nav" style="display: none;">
+				<div class="next"></div>
+				<div class="prev"></div>
+			</div>
+			<div class="item is-active">
+				<div class="content">
+					<div class="tableBack">
+						<div class="cellBack">
+							<dl>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub1 item">
 				<div class="content">
 					<div class="tableBack">
 						<div class="topBack">
@@ -84,7 +99,7 @@
 								</dt>
 							</dl>
 						</div>
-						<div class="cellBack cell1">
+						<div class="cellBack">
 							<dl>
 								<dt>
 									<strong>
@@ -116,8 +131,23 @@
 			</div>
 		</div>
 
-		<div class="slider swiper-slide subBack">
-			<div class="sub2 item is-active">
+		<div class="slider slider2 swiper-slide subBack">
+			<div class="cell2"></div>
+			<div class="nav" style="display: none;">
+				<div class="next"></div>
+				<div class="prev"></div>
+			</div>
+			<div class="item is-active">
+				<div class="content">
+					<div class="tableBack">
+						<div class="cellBack">
+							<dl>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub2 item">
 				<div class="content">
 					<div class="tableBack">
 						<div class="topBack">
@@ -129,7 +159,7 @@
 								</dt>
 							</dl>
 						</div>
-						<div class="cellBack cell2">
+						<div class="cellBack">
 							<dl>
 								<dt>
 									<strong>
@@ -161,7 +191,22 @@
 				<span class="mouse">마우스 스크롤</span>
 			</div>
 		</div>
-		<div class="slider swiper-slide subBack">
+		<div class="slider slider3 swiper-slide subBack">
+			<div class="cell3"></div>
+			<div class="nav" style="display: none;">
+				<div class="next"></div>
+				<div class="prev"></div>
+			</div>
+			<div class="item is-active">
+				<div class="content">
+					<div class="tableBack">
+						<div class="cellBack">
+							<dl>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="sub3 item is-active">
 				<div class="content">
 					<div class="tableBack">
@@ -174,7 +219,7 @@
 								</dt>
 							</dl>
 						</div>
-						<div class="cellBack cell3">
+						<div class="cellBack">
 							<dl>
 								<dt>
 									<strong>
@@ -403,57 +448,6 @@
 			</div>
 			<span class="mouse">마우스 스크롤</span>
 		</div>
-
-		<script>
-			/*
-        $(".sub1").on('mousewheel',function(e){
-            var wheel = e.originalEvent.wheelDelta;
-
-            //스크롤값을 가져온다.
-            if(wheel>0){
-            //스크롤 올릴때
-                $(".prev").click();
-            } else {
-            //스크롤 내릴때
-                $(".next").click();
-            }
-        });
-
-        $(".sub2").on('mousewheel',function(e){
-            var wheel = e.originalEvent.wheelDelta;
-
-            //스크롤값을 가져온다.
-            if(wheel>0){
-            //스크롤 올릴때
-                $(".prev").click();
-            } else {
-            //스크롤 내릴때
-                $(".next").click();
-            }
-        });
-
-        $(".sub3").on('mousewheel',function(e){
-            var wheel = e.originalEvent.wheelDelta;
-
-            //스크롤값을 가져온다.
-            if(wheel>0){
-            //스크롤 올릴때
-                $(".prev").click();
-            } else {
-            //스크롤 내릴때
-                $(".next").click();
-            }
-        });
-        $('#subSlider').touchSlider({
-            speed: 1000,
-            autoplay: {
-                enable: true,
-                pauseHover: true,
-                addHoverTarget: '',
-                interval: 3500
-            }
-        });*/
-		</script>
 	</div>
 	<div class="swiper-pagination swiper-pagination-side"></div>
 </div>
@@ -1935,6 +1929,9 @@
 <!-- //팝업 -->
 <!-- Initialize Swiper -->
 <script>
+
+	var sliderItemNum = 0;
+
 	$(document).ready(function(){
 		//마우스 스크롤 아이콘
 		function moveicon() {
@@ -2021,20 +2018,47 @@
 
 		setInterval(function(){
 			/** 찾아오는길 두번째 슬라이드 반투명 처리 **/
-			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second").attr("class").indexOf("swiper-slide-active") > 0){
+			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second").className.indexOf("swiper-slide-active") > 0){
 				$(".swiper-slide-second").attr("style","opacity:1;");
 			}else{
 				$(".swiper-slide-second").css('opacity') == '0.2';
 			}
 
+			/** 첫화면 로고 숨김 처리 **/
 			if($(".swiper-slide-active")[0].id != "mainBack"){
 				$(".logo").attr("style","opacity:1;");
 			}else {
 				$(".logo").attr("style","opacity:0;");
 			}
 
+			/** slider 배경이미지 에니메이션 **/
+			if ($(".swiper-slide-active")[0].className.indexOf("slider1") >= 0 && sliderItemNum != 1) {
+				$(".slider1 > .nav > .next").click();
+				sliderItemNum = 1;
+			}else if ($(".swiper-slide-active")[0].className.indexOf("slider1") < 0 && sliderItemNum == 1) {
+				sliderItemNum = 0;
+				$(".slider1 > .nav > .prev").click();
+			}
+
+			if ($(".swiper-slide-active")[0].className.indexOf("slider2") >= 0 && sliderItemNum != 2) {
+				$(".slider2 > .nav > .next").click();
+				sliderItemNum = 2;
+			}else if ($(".swiper-slide-active")[0].className.indexOf("slider2") < 0 && sliderItemNum == 2) {
+				sliderItemNum = 0;
+				$(".slider2 > .nav > .prev").click();
+			}
+
+			if ($(".swiper-slide-active")[0].className.indexOf("slider3") >= 0 && sliderItemNum != 3) {
+				$(".slider3 > .nav > .next").click();
+				sliderItemNum = 3;
+			}else if ($(".swiper-slide-active")[0].className.indexOf("slider3") < 0 && sliderItemNum == 3) {
+				sliderItemNum = 0;
+				$(".slider3 > .nav > .prev").click();
+			}
+
 		}, 100);
 	});
+
 	var swiper1 = new Swiper('.swiper-container-side', {
 		direction: 'vertical',
 		slidesPerView: 1,
