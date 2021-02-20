@@ -87,7 +87,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="sub1 item">
+			<div class="sub1 item is-active">
 				<div class="content">
 					<div class="tableBack">
 						<div class="topBack">
@@ -147,7 +147,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="sub2 item">
+			<div class="sub2 item is-active">
 				<div class="content">
 					<div class="tableBack">
 						<div class="topBack">
@@ -348,7 +348,7 @@
 							<div class="swiper-container-supporter">
 								<div class="parallax-bg" style="background-image: url(images/main/main_003.jpg)" data-swiper-parallax="-23%"></div>
 								<div class="swiper-wrapper">
-									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+									<div class="swiper-slide swiper-slide-supporter">
 										<div data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(1)">
 												<img src="images/supporter/sp1.jpg" />
@@ -356,7 +356,7 @@
 											</a>
 										</div>
 									</div>
-									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+									<div class="swiper-slide swiper-slide-supporter">
 										<div class="road-img" data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(2)">
 												<img src="images/supporter/sp2.jpg" />
@@ -364,7 +364,7 @@
 											</a>
 										</div>
 									</div>
-									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+									<div class="swiper-slide swiper-slide-supporter">
 										<div class="road-img" data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(3)">
 												<img src="images/supporter/sp3.jpg" />
@@ -372,7 +372,7 @@
 											</a>
 										</div>
 									</div>
-									<div class="swiper-slide swiper-slide-supporter swiper-slide-second">
+									<div class="swiper-slide swiper-slide-supporter">
 										<div class="road-img" data-swiper-parallax-opacity="0.2">
 											<a href="javascript:audioPlay(4)">
 												<img src="images/supporter/sp4.jpg" />
@@ -2018,7 +2018,7 @@
 
 		setInterval(function(){
 			/** 찾아오는길 두번째 슬라이드 반투명 처리 **/
-			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second").className.indexOf("swiper-slide-active") > 0){
+			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second")[0].className.indexOf("swiper-slide-active") > 0){
 				$(".swiper-slide-second").attr("style","opacity:1;");
 			}else{
 				$(".swiper-slide-second").css('opacity') == '0.2';
@@ -2067,7 +2067,7 @@
 			el: '.swiper-pagination-side',
 			clickable: true,
 			renderBullet: function (index, className) {
-				if(index==2 || index==3) return '<div class="'+ className  + '" style="height: 0px;"></div>';
+				if(index==2 || index==3) return '<div class="'+ className  + '" style="height: 0px;width: 0px;"></div>';
 				else if(index>3) return '<div class="'+ className  + '"><button class="' + (index - 1) + 'SideBtn"><img src="images/sidemenu/' + (index - 1) + '.png"/></button></div>';
 				else return '<div class="'+ className  + '"><button class="' + (index + 1) + 'SideBtn"><img src="images/sidemenu/' + (index + 1) + '.png"/></button></div>';
 			}

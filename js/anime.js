@@ -20,7 +20,7 @@ function init() {
       const nextImgs = next.querySelectorAll(".img");
       const nextText = next.querySelectorAll(".content .letter");
   
-      const duration = 400;
+      const duration = 700;
       const offset = "-=" + 300;
       const imgOffset = duration*.8;
   
