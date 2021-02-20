@@ -317,11 +317,56 @@
 				<div class="cellBack stadium_bg">
 					<img src="images/main/main_003.jpg"/>
 					<dt>
-						<dl class="reverse stadiumDl">
+						<dl class="reverse">
 							<div class="stadiumImg">
-							 	<img src="images/staduim/map-1.png" width="80%"/>
+								<div class="poi poi1">
+									<img src="images/staduim/POI_1.png"/>
+								</div>
+								<div class="poi poi2">
+									<img src="images/staduim/POI_2.png"/>
+								</div>
+								<div class="poi poi3">
+									<img src="images/staduim/POI_3.png"/>
+								</div>
+								<div class="poi poi4">
+									<img src="images/staduim/POI_4.png"/>
+								</div>
+								<div class="poi poi5">
+									<img src="images/staduim/POI_5.png"/>
+								</div>
+								<div class="poi poi6">
+									<img src="images/staduim/POI_6.png"/>
+								</div>
+								<div class="poi poi7">
+									<img src="images/staduim/POI_7.png"/>
+								</div>
+								<div class="poi poi8">
+									<img src="images/staduim/POI_8.png"/>
+								</div>
+							 	<img id="stadiumMapImg" src="images/staduim/map-1.png"/>
 							</div>
-							<div class="stadiumTextHide">
+							<div class="poiPopupHide poiPopup1">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup2">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup3">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup4">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup5">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup6">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup7">
+								<img src="images/staduim/7.png" width="80%"/>
+							</div>
+							<div class="poiPopupHide poiPopup8">
 								<img src="images/staduim/7.png" width="80%"/>
 							</div>
 						</dl>
@@ -2012,16 +2057,49 @@
 		});
 
 		$(".stadiumImg").click(function () {
-			$(".stadiumImg > img").attr("src","images/staduim/map-2.png");
-			$(".stadiumTextHide").attr("class","stadiumText");
+			var x = event.offsetX;
+			var y = event.offsetY;
+			var poi = [[142,216],[232,284],[210,134],[246,124],[318,210],[182,168],[476,38],[184,256]];
+			var poiNum = -1;
+			var popupLeft = 80;
+			var pcOffsetX = 0;
+			var pcOffsetY = -30;
+
+			// 모바일에선 1/2 좌표
+			if($(window).width() <= "650"){
+				poi = [[71,108],[116,142],[105,67],[123,62],[159,105],[91,84],[238,19],[92,128]];
+				popupLeft = 15;
+			}else {// PC에선 맵 상대좌표
+				pcOffsetX = $("#stadiumMapImg")[0].offsetLeft;
+				pcOffsetY = $("#stadiumMapImg")[0].offsetTop - 20;
+			}
+
+			for(var i=0; i<poi.length; i++){
+				if((poi[i][0]-10) < x && x < (poi[i][0]+10) && (poi[i][1]-10) < y && y < (poi[i][1]+10)){
+					poiNum = i;
+				}
+			}
+
+			if(poiNum != -1) {
+				$(".poi" + (poiNum + 1)).attr("style", "left:" + (poi[poiNum][0] - 20 + pcOffsetX) + "px;top:" + (poi[poiNum][1] + pcOffsetY) + "px;opacity: 1;");
+				$(".poiPopup" + (poiNum + 1)).attr("class", "poiPopup poiPopup" + (poiNum + 1));
+				$(".poiPopup" + (poiNum + 1)).attr("style", "left:" + popupLeft + "%;");
+			}
+			for(var i=0; i<poi.length; i++) {
+				if(poiNum != i) {
+					$(".poi" + (i + 1)).attr("style", "left:-9999px;top:-9999px;opacity: 0");
+					$(".poiPopup" + (i + 1)).attr("class", "poiPopupHide poiPopup"+(i+1));
+					$(".poiPopup"+(i+1)).attr("style","left:-9999px;");
+				}
+			}
 		})
 
 		setInterval(function(){
 			/** 찾아오는길 두번째 슬라이드 반투명 처리 **/
 			if($(".swiper-slide-second").css('opacity') == '0.2' && $(".swiper-slide-second")[0].className.indexOf("swiper-slide-active") > 0){
 				$(".swiper-slide-second").attr("style","opacity:1;");
-			}else{
-				$(".swiper-slide-second").css('opacity') == '0.2';
+			}else if($(".swiper-slide-second")[0].className.indexOf("swiper-slide-active") < 0){
+				$(".swiper-slide-second").attr("style","opacity:0.2;");
 			}
 
 			/** 첫화면 로고 숨김 처리 **/

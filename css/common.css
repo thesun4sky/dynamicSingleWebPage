@@ -66,9 +66,6 @@ button {cursor:pointer;}
 }
 .logo img {width:150px;height:auto;
 }
-.stadiumDl {
-	margin-left: 15%;
-}
 .stadiumDl * {
 	color: #4b4b4b !important;
 }
@@ -240,33 +237,44 @@ button {cursor:pointer;}
 .stadiumImg {
 	position: relative;
 	z-index: 99;
-	width: 70%;
+	width: 100%;
 	float: left;
 }
 .stadiumImg:hover {
 	cursor: pointer;
 }
-.stadiumText {
-	position: relative;
+.stadiumImg > img{
+	width: 680px;
+}
+.poi {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 1s;
+}
+.poi > img{
+	width: 40px;
+}
+.poiPopup {
+	position: fixed;
 	z-index: 99;
 	width: 30%;
+	left: 80%;
 	float: left;
 	margin-left: -15%;
-}
-.stadiumText > img {
 	opacity: 1;
 	transition: opacity 2.2s, margin-top 1.2s;
 }
-.stadiumTextHide {
-	position: relative;
+.poiPopupHide {
+	position: fixed;
 	z-index: 99;
 	width: 30%;
 	float: left;
-}
-.stadiumTextHide > img {
+	display: none;
 	opacity: 0;
-	margin-top: 20%;
 	transition: opacity 2.2s, margin-top 1.2s;
+}
+.poiPopupHide > img {
+	margin-top: 20%;
 }
 
 .ts-paging {padding-top:20px;}
@@ -584,7 +592,7 @@ button {cursor:pointer;}
 	}
 
 	/* 마우스 애니메이션 아이콘 위치를 하단바 상단으로 올리기  */
-	.mouse {margin-bottom:25px !important;width:33px;height:42px;background: url("../images/icon_touch.png") no-repeat;background-size:100% auto;}
+	.mouse {margin-bottom:10% !important;width:33px;height:42px;background: url("../images/icon_touch.png") no-repeat;background-size:100% auto;}
 
 	/* 오른쪽 상단 로고 top:0; right:5% , 사이즈 축소 90px; */
 	.logo {position:fixed;top:0px !important;right:5% !important;z-index:99;opacity: 0; transition: opacity 0.5s;
@@ -592,16 +600,49 @@ button {cursor:pointer;}
 	.logo img {width:90px !important;height:auto;
 	}
 
+	/* 찾아오는길 -> 하단 메뉴 3개 2개로 나누기 */
 	.swiper-container-road {
 		position:absolute;
 		width:100%; height: 50%; top: 10%; left: 0px;
 	}
 	.swiper-pagination-road {
-		margin-top: 80px !important;
+		margin-top: 112px !important;
 	}
 	.swiper-pagination-road > .swiper-pagination-bullet {
 		font-size: 10px !important;
 		width: 80px !important;
-		margin-left: 10px !important;
+		height: 30px !important;
+		margin-right: 15px !important;
+		padding-top: 10px !important;
+		line-height: 10px !important;
+	}
+	.swiper-slide-road img {
+		width: 60%;
+		position: relative;
+		left: 23%;
+		display: block;
+		float: left;
+		margin-right: 5%;
+	}
+
+	/* 경기안내 -> map 키우고 위로올리고, 아래 설명 박스 내리기 */
+	.stadiumImg {
+		margin-top: -30% !important;
+	}
+	.stadiumImg > img{
+		width: 340px !important;
+	}
+
+
+	.poiPopup {
+		position: fixed;
+		z-index: 99;
+		width: 100% !important;
+		left: 80%;
+		float: left;
+		margin-top: 20% !important;
+		margin-left: -15%;
+		opacity: 1;
+		transition: opacity 2.2s, margin-top 1.2s;
 	}
 }
