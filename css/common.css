@@ -58,7 +58,7 @@ button {cursor:pointer;}
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
-.topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px; text-decoration: underline; text-underline-position: under;}
+.topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px; text-decoration: underline; text-underline-position: under; text-decoration-color: white;}
 .topBack > strong {font-size: 20px;}
 .topBackSub {margin-top: 5%; z-index: 99;}
 .road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
@@ -102,7 +102,7 @@ button {cursor:pointer;}
 	padding-bottom: 50px;
 	position:absolute;
 	width:20%; height: 50%;
-	left:17%; top: 25%;
+	top: 25%;
 
 }
 .swiper-slide-supporter img {
@@ -645,4 +645,18 @@ button {cursor:pointer;}
 		opacity: 1;
 		transition: opacity 2.2s, margin-top 1.2s;
 	}
+
+
+	.swiper-container-supporter {
+		position: relative !important;
+		left: 10% !important;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		position:absolute;
+		width:80%; height: 50%;
+		top: 25%;
+	}
+
+	.SNStap img {width:100px !important; margin-right:0px !important;}
+	.SNStap h1 {font-family:notosanskr; font-size: 14px !important; font-weight: 600; color:white;}
 }
