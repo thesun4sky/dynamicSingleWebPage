@@ -236,7 +236,6 @@ button {cursor:pointer;}
 .poi {
 	position: absolute;
 	opacity: 0;
-	transition: opacity 0.4s;
 }
 
 
