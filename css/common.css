@@ -143,26 +143,6 @@ button {cursor:pointer;}
 	margin-left: auto !important;
 	margin-top: 50px;
 }
-
-.swiper-pagination-road div {
-	position: relative;
-	width:150px;
-	height:50px;
-	margin:5px !important;
-	padding-top: 15px;
-	color: #3f3f3f;
-	border-radius: unset !important;
-	border: 1px solid white;
-}
-.swiper-pagination-road div:hover {
-	width:150px;
-	height:50px;
-	margin:5px!important;
-	border-color:#ffffff;
-	background:#ffffff;
-	color: rgba(14, 76, 142);
-	font-weight: 700;
-}
 .supporterBtn {
 	position: relative;
 	top: -50px;
@@ -217,15 +197,15 @@ button {cursor:pointer;}
 .subSlider ul {position:absolute;top:0;left:0;overflow:hidden;}
 .subSlider ul li img {width:100%;}
 .swiper-pagination-bullet {
-	width: 20px;
-	height: 20px;
+	width: 15px;
+	height: 15px;
 	text-align: center;
 	line-height: 20px;
 	font-size: 14px;
 	color: #000;
 	opacity: 1;
-	background: rgba(0, 0, 0, 0);
-	margin: 0 !important;
+	background: rgba(167, 167, 167,.5);
+	margin: 0px !important;
   }
   .swiper-pagination-bullet-active {
 	color: rgb(14, 76, 142) !important;
@@ -233,6 +213,9 @@ button {cursor:pointer;}
 	font-weight: 700;
 
   }
+.swiper-pagination-road-bullet {
+	margin: 5px !important;
+}
 .findRoad {width: 70%; border: 0px;}
 .swiper-slide-road > p {
 	font-size:16px;
@@ -248,17 +231,17 @@ button {cursor:pointer;}
 	cursor: pointer;
 }
 .stadiumImg > img{
-	width: 680px;
+	width: 840px;
 }
 .poi {
 	position: absolute;
 	opacity: 0;
-	transition: opacity 1s;
+	transition: opacity 0.4s;
 }
 
 
 .poi > img{
-	width: 40px;
+	width: 60px;
 }
 .poiPopup {
 	position: fixed;
@@ -586,6 +569,14 @@ button {cursor:pointer;}
 	.SNStap h1 {font-size: 20px; font-weight: 700; color:white; padding: 20px;}
 
 }
+/* 화면이 1920 이상일 경우 */
+@media screen and (min-width:1920px){
+
+	.stadiumImg > img{
+		width: 960px !important;
+	}
+
+}
 /* media 함수는 아래순서가 우선적용되지만 혹시 바뀔경우를 대비해 !imporant 적용함 */
 @media screen and (max-width:650px){
 .main h1 img {max-width: 350px;}
@@ -620,15 +611,15 @@ button {cursor:pointer;}
 	}
 	.swiper-pagination-road > .swiper-pagination-bullet {
 		font-size: 10px !important;
-		width: 60px !important;
-		height: 30px !important;
+		width: 12px !important;
+		height: 12px !important;
 		margin-rigt: 0px !important;
 		padding-top: 7px !important;
 		line-height: 10px !important;
 		buttom:0px;
 	}
 	.swiper-slide-road img {
-		width: 65%;
+		width: 75%;
 		position: relative;
 		left: 20%;
 		display: block;
@@ -640,11 +631,15 @@ button {cursor:pointer;}
 	/* 경기안내 -> map 키우고 위로올리고, 아래 설명 박스 내리기 */
 	.stadiumImg {
 		margin-top: -30% !important;
+		margin-left: -10% !important;
 	}
 	.stadiumImg > img{
-		width: 340px !important;
+		width: 420px !important;
 	}
 
+	.poi > img{
+		width: 45px;
+	}
 
 	.poiPopup {
 		position: fixed;
@@ -652,7 +647,7 @@ button {cursor:pointer;}
 		width: 100% !important;
 		left: 80%;
 		float: left;
-		margin-top: 20% !important;
+		margin-top: 40% !important;
 		margin-left: -15%;
 		opacity: 1;
 		transition: opacity 1s, margin-top 1.2s;

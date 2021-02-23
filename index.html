@@ -317,7 +317,7 @@
 				<div class="cellBack stadium_bg">
 					<img src="images/main/main_003.jpg"/>
 					<dt>
-						<dl class="reverse">
+						<dl id="stadium_bg" class="reverse">
 							<div class="stadiumImg">
 								<div class="poi poi1">
 									<img src="images/staduim/POI_1.png"/>
@@ -343,7 +343,7 @@
 								<div class="poi poi8">
 									<img src="images/staduim/POI_8.png"/>
 								</div>
-							 	<img id="stadiumMapImg" src="images/staduim/map-1.png"/>
+							 	<img id="stadiumMapImg" src="images/staduim/map-1.png" unselectable="on"/>
 							</div>
 							<div class="poiPopupHide poiPopup1">
 								<img src="images/staduim/1.png" width="80%"/>
@@ -2023,6 +2023,9 @@
 <script>
 
 	var sliderItemNum = 0;
+	var cursorX;
+	var cursorY;
+	var mouseOnstadiumImg = false;
 
 	$(document).ready(function(){
 		//마우스 스크롤 아이콘
@@ -2103,43 +2106,76 @@
 			$(".swiper-slide-second").attr("style","opacity:0.2;");
 		});
 
-		$(".stadiumImg").click(function () {
-			var x = event.offsetX;
-			var y = event.offsetY;
-			var poi = [[142,216],[232,284],[210,134],[246,124],[318,210],[182,168],[476,38],[184,256]];
-			var poiNum = -1;
-			var popupLeft = 80;
-			var pcOffsetX = 0;
-			var pcOffsetY = -30;
+		//모바일일경우 Stadium 이미지 변경
+		if($(window).width() <= "650") $("#stadiumMapImg").attr("src","images/staduim/map_mobile.png");
 
+		//기본 poi좌표
+		var poi = [[208,300],[337,401],[304,192],[356,172],[459,292],[261,230],[679,49],[266,361]];
+		var popupLeft = 80;
+		var pcOffsetX = 0;
+		var pcOffsetY = -30;
+		var poiNum = -1;
+
+		function setPoi(x, y){
+			poiNum = -1;
 			// 모바일에선 1/2 좌표
 			if($(window).width() <= "650"){
-				poi = [[71,108],[116,142],[105,67],[123,62],[159,105],[91,84],[238,19],[92,128]];
+				poi = [[53,186],[132,245],[112,120],[143,106],[205,179],[84,142],[340,34],[88,222]];
 				popupLeft = 15;
+			}else if("650" < $(window).width() && $(window).width() < "1920") { //PC중간사이즈
+				poi = [[182,262],[295,348],[267,167],[312,151],[402,257],[228,202],[595,43],[234,313]];
+				popupLeft = 80;
+				pcOffsetX = $("#stadiumMapImg")[0].offsetLeft - 10;
+				pcOffsetY = $("#stadiumMapImg")[0].offsetTop - 35;
 			}else {// PC에선 맵 상대좌표
-				pcOffsetX = $("#stadiumMapImg")[0].offsetLeft;
-				pcOffsetY = $("#stadiumMapImg")[0].offsetTop - 20;
+				pcOffsetX = $("#stadiumMapImg")[0].offsetLeft - 10;
+				pcOffsetY = $("#stadiumMapImg")[0].offsetTop - 35;
 			}
-
 			for(var i=0; i<poi.length; i++){
-				if((poi[i][0]-10) < x && x < (poi[i][0]+10) && (poi[i][1]-10) < y && y < (poi[i][1]+10)){
+				if((poi[i][0]-10) < x && x < (poi[i][0]+10) && (poi[i][1]-10) < y && y < (poi[i][1]+20)){
 					poiNum = i;
 				}
 			}
-
 			if(poiNum != -1) {
 				$(".poi" + (poiNum + 1)).attr("style", "left:" + (poi[poiNum][0] - 20 + pcOffsetX) + "px;top:" + (poi[poiNum][1] + pcOffsetY) + "px;opacity: 1;");
+			}
+			for(var i=0; i<poi.length; i++) {
+				if (poiNum != i) {
+					$(".poi" + (i + 1)).attr("style", "left:-9999px;top:-9999px;opacity: 0");
+				}
+			}
+		}
+
+		function setPopUp(poiNum) {
+
+			if(poiNum != -1) {
 				$(".poiPopup" + (poiNum + 1)).attr("class", "poiPopup poiPopup" + (poiNum + 1));
 				$(".poiPopup" + (poiNum + 1)).attr("style", "left:" + popupLeft + "%;");
 			}
 			for(var i=0; i<poi.length; i++) {
 				if(poiNum != i) {
-					$(".poi" + (i + 1)).attr("style", "left:-9999px;top:-9999px;opacity: 0");
 					$(".poiPopup" + (i + 1)).attr("class", "poiPopupHide poiPopup"+(i+1));
 					$(".poiPopup"+(i+1)).attr("style","left:-9999px;");
 				}
 			}
-		})
+		}
+
+		$(".stadiumImg").click(function () {
+			if(poiNum<0 || $(window).width() <= "650"){
+				var x = event.offsetX;
+				var y = event.offsetY;
+				setPoi(x,y);
+			}
+			setPopUp(poiNum);
+		});
+
+		$(".stadiumImg").hover(function () {
+			if($(window).width() > "650") {
+				mouseOnstadiumImg = true;
+			}
+		}, function () {
+			mouseOnstadiumImg = false;
+		});
 
 		setInterval(function(){
 			/** 찾아오는길 두번째 슬라이드 반투명 처리 **/
@@ -2180,9 +2216,22 @@
 				sliderItemNum = 0;
 				$(".slider3 > .nav > .prev").click();
 			}
-
-		}, 100);
+			if(mouseOnstadiumImg){
+				pcOffsetX = $("#stadiumMapImg")[0].offsetLeft;
+				pcOffsetY = $("#stadiumMapImg")[0].offsetTop;
+				bgOffsetX = $("#stadium_bg")[0].offsetLeft;
+				bgOffsetY = $("#stadium_bg")[0].offsetTop;
+				var x = cursorX-pcOffsetX-bgOffsetX;
+				var y = cursorY-pcOffsetY-bgOffsetY;
+				setPoi(x,y);
+			}
+		}, 200);
 	});
+
+	document.onmousemove = function(e){
+		cursorX = e.pageX;
+		cursorY = e.pageY;
+	}
 
 	var swiper1 = new Swiper('.swiper-container-side', {
 		direction: 'vertical',
@@ -2192,9 +2241,11 @@
 			el: '.swiper-pagination-side',
 			clickable: true,
 			renderBullet: function (index, className) {
+				var prefix = "";
+				if($(window).width() <= "650") prefix = "_m";
 				if(index==2 || index==3) return '<div class="'+ className  + '" style="height: 0px;width: 0px;"></div>';
-				else if(index>3) return '<div class="'+ className  + '"><button class="' + (index - 1) + 'SideBtn"><img src="images/sidemenu/' + (index - 1) + '.png"/></button></div>';
-				else return '<div class="'+ className  + '"><button class="' + (index + 1) + 'SideBtn"><img src="images/sidemenu/' + (index + 1) + '.png"/></button></div>';
+				else if(index>3) return '<div class="'+ className  + '"><button class="' + (index - 1) + 'SideBtn"><img src="images/sidemenu/' + (index - 1) + prefix + '.png"/></button></div>';
+				else return '<div class="'+ className  + '"><button class="' + (index + 1) + 'SideBtn"><img src="images/sidemenu/' + (index + 1) + prefix + '.png"/></button></div>';
 			}
 		},
 		mousewheel : {
@@ -2210,11 +2261,11 @@
 			el: '.swiper-pagination-road',
 			clickable: true,
 			renderBullet: function (index, className) {
-				if(index==0) return '<div class="'+ className  +'">수원역/화서역</div>';
-				else if(index==1) return '<div class="'+ className  + '">분당선/신분당선</div>';
-				else if (index==2) return '<div class="'+ className  + '">서울시외버스</div>';
-				else if (index==3) return '<div class="'+ className  + '">자가용</div>';
-				else if (index==4) return '<div class="'+ className  + '">관람 후 버스이용</div>';
+				if(index==0) return '<div class="'+ className  +' swiper-pagination-road-bullet"></div>';
+				else if(index==1) return '<div class="'+ className  + ' swiper-pagination-road-bullet"></div>';
+				else if (index==2) return '<div class="'+ className  + ' swiper-pagination-road-bullet"></div>';
+				else if (index==3) return '<div class="'+ className  + ' swiper-pagination-road-bullet"></div>';
+				else if (index==4) return '<div class="'+ className  + ' swiper-pagination-road-bullet"></div>';
 			}
 		},
 	});
