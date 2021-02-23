@@ -630,7 +630,7 @@ button {cursor:pointer;}
 	/* 경기안내 -> map 키우고 위로올리고, 아래 설명 박스 내리기 */
 	.stadiumImg {
 		margin-top: -30% !important;
-		margin-left: -10% !important;
+		margin-left: -6% !important;
 	}
 	.stadiumImg > img{
 		width: 420px !important;
@@ -661,6 +661,9 @@ button {cursor:pointer;}
 		position:absolute;
 		width:80%; height: 50%;
 		top: 25%;
+	}
+	.stadiumImg:hover {
+		cursor: none;
 	}
 	.SNStap button {width:110px !important; margin-right: 10px !important; }
 	.SNStap > div > button > img {width:110px !important; margin-right:0px !important; float:left;}

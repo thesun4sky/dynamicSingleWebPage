@@ -547,7 +547,7 @@
 	</div>
 </div>
 <div class="logo">
-	<img src="images/fix/logo.png"/>
+	<img id="test" src="images/fix/logo.png"/>
 </div>
 <!-- 팝업 -->
 <div class="dimPop" style="display:none">
@@ -659,6 +659,10 @@
 		</ul>
 		<script>
 			$(document).ready(function(){
+				$('#test').click(function (){
+					console.log("test");
+				})
+
 				$('.emapBtn1').click(function(){
 					$('.lPop2 .emapSlider1').show();
 					$('.lPop2 .emapSlider2').hide();
