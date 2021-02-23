@@ -50,18 +50,21 @@ button {cursor:pointer;}
 .main div button.btn3:hover {border-color:#d80715;background:#d80715;}
 .mouse {position:absolute;left:50%;margin-left:-22px;bottom:40px;z-index:10;display:inline-block;opacity:0;transition:opacity 2.2s .8s;width:44px;height:66px;overflow:hidden;text-indent:-9999px;background: url("../images/icon_mouse.png") no-repeat;}
 .swiper-slide.swiper-slide-active .mouse {opacity:1;}
-.bgMain .road_bg .stadium_bg .supporter_bg {position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;max-width:100% !important;}
-.bgMain img, .road_bg > img, .stadium_bg > img, .supporter_bg > img {position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;
+.bgMain .road_bg .stadium_bg .supporter_bg .SNS_bg {position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;max-width:100% !important;}
+.bgMain img, .road_bg > img, .stadium_bg > img, .supporter_bg > img, .SNS_bg > img {position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+.SNS_bg > img {z-index: -1; height:auto; width: 100%; overflow: hidden;}
+.mainBG-PC {z-index: 2;}
+.mainBG-MB {position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;max-width:150% !important; z-index: 1;}
 .topBack {position: absolute; left: 50%; width: 250px; margin-left: -125px; text-decoration: underline; text-underline-position: under; text-decoration-color: white;}
 .topBack > strong {font-size: 20px;}
 .topBackSub {margin-top: 5%; z-index: 99;}
-.road_bg > img, .stadium_bg > img, .supporter_bg > img {height:100%;}
+.road_bg > img, .stadium_bg > img, .supporter_bg > img  {height:100%;}
 .logo {position:fixed;top:7%;right:7%;z-index:99;opacity: 0; transition: opacity 0.5s;
 }
 .logo img {width:150px;height:auto;
@@ -195,8 +198,9 @@ button {cursor:pointer;}
 .subBack.swiper-slide-active dl {margin-top:0px;opacity:1;}
 .subBack dl * {font-family:'Noto Sans KR';color:#fff;}
 .subBack dl dt strong {font-size:30px;font-weight:bold; }
+.subBack dl dt topTitle {font-size:25px;font-weight:600; }
 .subBack dl dt strong span {font-size:80px;}
-.subBack dl dt div {padding:15px 0 0 0;font-size:35px;font-weight:100;letter-spacing:0;}
+.subBack dl dt div {padding:15px 0 0 0;font-size:35px;font-weight:400;letter-spacing:0;}
 .subBack dl dd {padding:50px 0 0 0;font-size:17px;}
 .subBack dl dd:after {content: '';display:table;clear:both;}
 .subBack dl dd.txt {letter-spacing:0;font-weight:300; line-height: 1.5;}
@@ -251,6 +255,8 @@ button {cursor:pointer;}
 	opacity: 0;
 	transition: opacity 1s;
 }
+
+
 .poi > img{
 	width: 40px;
 }
@@ -262,7 +268,7 @@ button {cursor:pointer;}
 	float: left;
 	margin-left: -15%;
 	opacity: 1;
-	transition: opacity 2.2s, margin-top 1.2s;
+	transition: opacity 1s, margin-top 1.2s;
 }
 .poiPopupHide {
 	position: fixed;
@@ -271,7 +277,7 @@ button {cursor:pointer;}
 	float: left;
 	display: none;
 	opacity: 0;
-	transition: opacity 2.2s, margin-top 1.2s;
+	transition: opacity 1s, margin-top 1.2s;
 }
 .poiPopupHide > img {
 	margin-top: 20%;
@@ -454,7 +460,7 @@ button {cursor:pointer;}
 .exCostLayout .exCost3 p {padding:20px 0 0;height:55px;text-align:center;word-break:keep-all;}
 
 .SNStap h1 {font-family:notosanskr; font-size: 25px; font-weight: 600; color:white;}
-.SNStap img {width:200px; margin-right:20px;}
+.SNStap > div > button > img {width:200px; margin-right:20px;}
 .SNStap button {border: 0 !important; margin-right: 40px !important;}
 @media screen and (max-width:1540px){
 	.subBack dl dt strong {font-size:33px;}
@@ -465,14 +471,15 @@ button {cursor:pointer;}
 	.subSliderBack {width:580px;}
 }
 @media screen and (max-width:1430px){
+	.swiper-slide-road img {width: 45%;}
 	.pCase {display:none;}
 	.mCase {display:inline-block;}
 	.swiper-slide .main div button,
 	.swiper-slide dl dd button {font-size:12px;height:38px;}
-	.main {padding:45px;}
+	main {padding:10px;}
 	.main h1 {width:100%;}
 	.main div {padding:45px 0 0;}
-	.main div button {margin-bottom:9px;width:100% !important;}
+	.main div button {margin-bottom:9px; width:100%}
 	.bgVideo video.pblock {display:none;}
 	.bgVideo video.mblock {display:block;}
 	.subBack dl {float:none;width:100%;}
@@ -576,11 +583,13 @@ button {cursor:pointer;}
 	.exCostLayout .exCost3 p {padding:15px 0 0;height:45px;font-size:12px;}
 
 	.SNStap {color:white; }
-	.SNStap h1 {font-size: 20px; font-weight: 700; color:white;}
+	.SNStap h1 {font-size: 20px; font-weight: 700; color:white; padding: 20px;}
 
 }
 /* media 함수는 아래순서가 우선적용되지만 혹시 바뀔경우를 대비해 !imporant 적용함 */
 @media screen and (max-width:650px){
+.main h1 img {max-width: 350px;}
+
 	/* 사이드 메뉴 -> 아래 하단바로 내리기, 비율에 맞춰서 (100% 나누기 6)  */
 	.swiper-pagination-side {width:100% !important; position:fixed; top:100% !important;left:0px;z-index:99;border: 0px;
 	}
@@ -599,30 +608,33 @@ button {cursor:pointer;}
 	}
 	.logo img {width:90px !important;height:auto;
 	}
-
+.mainbtn {width:100% !important;}
+.mainbtn-gird {padding-left:20px !important; padding-right:20px !important; padding-bottom:60px !important;}
 	/* 찾아오는길 -> 하단 메뉴 3개 2개로 나누기 */
 	.swiper-container-road {
 		position:absolute;
 		width:100%; height: 50%; top: 10%; left: 0px;
 	}
 	.swiper-pagination-road {
-		margin-top: 112px !important;
+		margin-top: 150px !important;
 	}
 	.swiper-pagination-road > .swiper-pagination-bullet {
 		font-size: 10px !important;
-		width: 80px !important;
+		width: 60px !important;
 		height: 30px !important;
-		margin-right: 15px !important;
-		padding-top: 10px !important;
+		margin-rigt: 0px !important;
+		padding-top: 7px !important;
 		line-height: 10px !important;
+		buttom:0px;
 	}
 	.swiper-slide-road img {
-		width: 60%;
+		width: 65%;
 		position: relative;
-		left: 23%;
+		left: 20%;
 		display: block;
 		float: left;
-		margin-right: 5%;
+		margin-right: 10%;
+		margin-top: 10px;
 	}
 
 	/* 경기안내 -> map 키우고 위로올리고, 아래 설명 박스 내리기 */
@@ -643,7 +655,7 @@ button {cursor:pointer;}
 		margin-top: 20% !important;
 		margin-left: -15%;
 		opacity: 1;
-		transition: opacity 2.2s, margin-top 1.2s;
+		transition: opacity 1s, margin-top 1.2s;
 	}
 
 
@@ -656,7 +668,10 @@ button {cursor:pointer;}
 		width:80%; height: 50%;
 		top: 25%;
 	}
-
-	.SNStap img {width:100px !important; margin-right:0px !important;}
+	.SNStap button {width:110px !important; margin-right: 10px !important; }
+	.SNStap > div > button > img {width:110px !important; margin-right:0px !important; float:left;}
 	.SNStap h1 {font-family:notosanskr; font-size: 14px !important; font-weight: 600; color:white;}
+	.mainBG-PC {z-index: 1;}
+	.mainBG-MB {z-index: 2;}
+	.SNS_bg > img {width:auto; height: 100%;}
 }
