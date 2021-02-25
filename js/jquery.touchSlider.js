@@ -194,9 +194,9 @@
 				});
 			}
 			
-			//this._controls = $('<div class="ts-controls"></div>');
+			this._controls = $('<div class="ts-controls"></div>');
 
-			//this._tg.nextAll('.ts-controls:eq(0)').remove();
+			this._tg.nextAll('.ts-controls:eq(0)').remove();
 			
 			if(this.opts.paging) {
 				this._controls.append('<div class="ts-paging"></div>');
@@ -316,7 +316,7 @@
 			this._list.removeAttr('aria-hidden');
 
 			this._list_wrap.find('.blank').remove();
-			//this._tg.nextAll('.ts-controls:eq(0)').remove();
+			this._tg.nextAll('.ts-controls:eq(0)').remove();
 
 			if(this.opts.autoplay.enable) {
 				this.autoStop();
