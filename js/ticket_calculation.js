@@ -1,34 +1,36 @@
 	var jsonTicketInfo= {
 			'SeatList':[
-				{"Zone":"N-Zone","SeatCode":"NFR","SeatName":"E/N 자유석", "Limited" : 9, "DiscountType": "A", 'Ticket':[{"Code":1,"Name":"성인","Price":14000},{"Code":2,"Name":"청소년","Price":7000},{"Code":3,"Name":"어린이","Price":4000}]}
-				, {"Zone":"E-Zone","SeatCode":"EFR","SeatName":"E/N 자유석", "Limited" : 9, "DiscountType": "A", 'Ticket':[{"Code":1,"Name":"성인","Price":14000},{"Code":2,"Name":"청소년","Price":7000},{"Code":3,"Name":"어린이","Price":4000}]}
-				, {"Zone":"E-Zone","SeatCode":"ECT","SeatName":"센터석", "Limited" : 9, "DiscountType": "1", 'Ticket':[{"Code":1,"Name":"성인","Price":16000},{"Code":2,"Name":"청소년","Price":9000},{"Code":3,"Name":"어린이","Price":5000}]}
-				, {"Zone":"E-Zone","SeatCode":"ETB","SeatName":"테이블석", "Limited" : 9, "DiscountType": "", 'Ticket':[{"Code":1,"Name":"2인석","Price":40000},{"Code":2,"Name":"3인석","Price":60000},{"Code":3,"Name":"4인석","Price":80000}]}
-				, {"Zone":"E-Zone","SeatCode":"ECZ","SeatName":"칭따오존", "Limited" : 9, "DiscountType": "", 'Ticket':[{"Code":1,"Name":"4인석","Price":80000},{"Code":2,"Name":"6인석","Price":120000}]}
-				, {"Zone":"W-Zone","SeatCode":"WFR","SeatName":"W 자유석", "Limited" : 9, "DiscountType": "1,3", 'Ticket':[{"Code":1,"Name":"성인","Price":20000},{"Code":2,"Name":"청소년","Price":20000},{"Code":3,"Name":"어린이","Price":10000}]}
-				, {"Zone":"W-Zone","SeatCode":"WPR","SeatName":"프리미엄석", "Limited" : 9, "DiscountType": "1", 'Ticket':[{"Code":1,"Name":"성인","Price":40000},{"Code":2,"Name":"청소년","Price":40000},{"Code":3,"Name":"어린이","Price":40000}]}
-				, {"Zone":"W-Zone","SeatCode":"WBS","SeatName":"벤치석", "Limited" : 9, "DiscountType": "1", 'Ticket':[{"Code":1,"Name":"성인","Price":30000},{"Code":2,"Name":"청소년","Price":30000},{"Code":3,"Name":"어린이","Price":20000}]}
+				{"Zone":"N-Zone","SeatCode":"NFR","SeatName":"E/N석", "Limited" : 9, "DiscountType": "A", 'Ticket':[{"Code":1,"Name":"성인","Price":14000},{"Code":2,"Name":"청소년","Price":7000},{"Code":3,"Name":"어린이","Price":4000}]}
+				, {"Zone":"E-Zone","SeatCode":"EFR","SeatName":"E/N석", "Limited" : 9, "DiscountType": "A", 'Ticket':[{"Code":1,"Name":"성인","Price":14000},{"Code":2,"Name":"청소년","Price":7000},{"Code":3,"Name":"어린이","Price":4000}]}
+				, {"Zone":"E-Zone","SeatCode":"ECT","SeatName":"센터석(5구역)", "Limited" : 9, "DiscountType": "1", 'Ticket':[{"Code":1,"Name":"성인","Price":16000},{"Code":2,"Name":"청소년","Price":9000},{"Code":3,"Name":"어린이","Price":5000}]}
+				/*, {"Zone":"E-Zone","SeatCode":"ETB","SeatName":"테이블석", "Limited" : 9, "DiscountType": "", 'Ticket':[{"Code":1,"Name":"2인석","Price":40000},{"Code":2,"Name":"3인석","Price":60000},{"Code":3,"Name":"4인석","Price":80000}]}
+				, {"Zone":"E-Zone","SeatCode":"ECZ","SeatName":"칭따오존", "Limited" : 9, "DiscountType": "", 'Ticket':[{"Code":1,"Name":"4인석","Price":80000},{"Code":2,"Name":"6인석","Price":120000}]}*/
+				, {"Zone":"W-Zone","SeatCode":"WPR","SeatName":"프리미엄석(5구역)", "Limited" : 9, "DiscountType": "1", 'Ticket':[{"Code":1,"Name":"성인","Price":40000},{"Code":2,"Name":"청소년","Price":40000},{"Code":3,"Name":"어린이","Price":40000}]}
+				, {"Zone":"W-Zone","SeatCode":"WBS","SeatName":"벤치석(4,6구역)", "Limited" : 9, "DiscountType": "1", 'Ticket':[{"Code":1,"Name":"성인","Price":30000},{"Code":2,"Name":"청소년","Price":30000},{"Code":3,"Name":"어린이","Price":20000}]}
 				, {"Zone":"W-Zone","SeatCode":"WA1","SeatName":"W 지정석(1구역)", "Limited" : 9, "DiscountType": "1,3", 'Ticket':[{"Code":1,"Name":"성인","Price":22000},{"Code":2,"Name":"청소년","Price":22000},{"Code":3,"Name":"어린이","Price":12000}]}
 				, {"Zone":"W-Zone","SeatCode":"WA2","SeatName":"W 지정석(2~3구역)", "Limited" : 9, "DiscountType": "1,3", 'Ticket':[{"Code":1,"Name":"성인","Price":25000},{"Code":2,"Name":"청소년","Price":25000},{"Code":3,"Name":"어린이","Price":15000}]}
-				, {"Zone":"W-Zone","SeatCode":"WDS","SeatName":"데스크석", "Limited" : 9, "DiscountType": "", 'Ticket':[{"Code":1,"Name":"2인석","Price":40000}]}
+				, {"Zone":"W-Zone","SeatCode":"WFR","SeatName":"W 지정석(7~9구역)", "Limited" : 9, "DiscountType": "1,3", 'Ticket':[{"Code":1,"Name":"성인","Price":20000},{"Code":2,"Name":"청소년","Price":20000},{"Code":3,"Name":"어린이","Price":10000}]}
+				, {"Zone":"W-Zone","SeatCode":"WFR2","SeatName":"W 지정석(10~12, 14~16 구역)", "Limited" : 9, "DiscountType": "1,3", 'Ticket':[{"Code":1,"Name":"성인","Price":20000},{"Code":2,"Name":"청소년","Price":20000},{"Code":3,"Name":"어린이","Price":10000}]}
+				/*, {"Zone":"W-Zone","SeatCode":"WDS","SeatName":"데스크석", "Limited" : 9, "DiscountType": "", 'Ticket':[{"Code":1,"Name":"2인석","Price":40000}]}*/
 			], 
 			'DiscountType':[
 				{"Code":1,"Name":"예매할인","Place":2,"Notice":""}
 				, {"Code":2,"Name":"군인/경찰","Place":1,"Notice":"(현역) 휴가증 + 신분증<br/>(직업) 공무원증 지참"}
 				, {"Code":3,"Name":"삼성카드","Place":1,"Notice":"모든 삼성카드 할인 적용<br/>*전월 이용실적에 따른 제한 없음"}
-				, {"Code":4,"Name":"6대 삼성카드","Place":2,"Notice":"삼성애니패스카드, 삼성애니패스포인트카드, <br/>SFC 삼성카드, 신그룹사원증카드, <br/>르노삼성자동차카드, 공무원연금 삼성카드<br/>*일 1회, 월 2회, 연 10매 한정"}
+				, {"Code":4,"Name":"6대 삼성카드","Place":3,"Notice":"삼성애니패스카드, 삼성애니패스포인트카드, <br/>SFC 삼성카드, 신그룹사원증카드, <br/>르노삼성자동차카드, 공무원연금 삼성카드<br/>*일 1회, 월 2회, 연 10매 한정"}
 				, {"Code":5,"Name":"삼성카드 S클래스","Place":3,"Notice":"직전 3개월 일시불 월 평균 10만원 이상 사용 시, 적용<br/>*카드발급 후 최초 1회 한정 (이후 6대 삼성카드 혜택 적용)"}
 				, {"Code":6,"Name":"메가박스 멤버십","Place":1,"Notice":"메가박스 멤버십 (모바일,회원카드)"}
-				, {"Code":7,"Name":"이마트 할인권","Place":1,"Notice":"이마트 5,000원 할인권"}
+				/*, {"Code":7,"Name":"이마트 할인권","Place":1,"Notice":"이마트 5,000원 할인권"}*/
 				, {"Code":8,"Name":"삼성 임직원","Place":1,"Notice":"사원증"}
 				, {"Code":9,"Name":"문화누리카드 (스포츠 바우처)","Place":3,"Notice":""}
 				, {"Code":10,"Name":"장애(경증)","Place":1,"Notice":"복지증"}
 				, {"Code":11,"Name":"장애(중증)","Place":1,"Notice":"복지증"}
 				, {"Code":12,"Name":"국가유공자/경로자","Place":1,"Notice":"국가유공자증,신분증 (만 65세 이상)"}
 				, {"Code":13,"Name":"문화가 있는 날","Place":1,"Notice":""}
+				, {"Code":14,"Name":"경기도 우수봉사자","Place":1,"Notice":"우수 자원봉사자증"}
 			]
 		};
-
+/*6대 삼성카드 기존코드 2  */
 	function AddTicket(obj) {
 		var z_code = $(obj).parent().parent().parent().parent().find(".exCostLayout").data("code");
 
@@ -269,7 +271,7 @@
 	                				if(total_qty > 1) {
 			                			option += "<option value='"+DiscountData["Code"]+"'>"+DiscountData["Name"]+"</option>";
 			                		}
-                				} else if(DiscountData["Code"] == 2 || DiscountData["Code"] == 7 || DiscountData["Code"] == 8 || DiscountData["Code"] == 12) {
+                				} else if(DiscountData["Code"] == 2 || DiscountData["Code"] == 7 || DiscountData["Code"] == 8 || DiscountData["Code"] == 12 || DiscountData["Code"] == 14) {
 	                				if(adult_qty > 0) {
 			                			option += "<option value='"+DiscountData["Code"]+"'>"+DiscountData["Name"]+"</option>";
 			                		}
@@ -298,7 +300,7 @@
 		                				if(total_qty > 1) {
 				                			option += "<option value='"+DiscountData["Code"]+"'>"+DiscountData["Name"]+"</option>";
 				                		}
-	                				} else if(DiscountData["Code"] == 2 || DiscountData["Code"] == 7 || DiscountData["Code"] == 8 || DiscountData["Code"] == 12) {
+	                				} else if(DiscountData["Code"] == 2 || DiscountData["Code"] == 7 || DiscountData["Code"] == 8 || DiscountData["Code"] == 12 || DiscountData["Code"] == 14) {
 		                				if(adult_qty > 0) {
 				                			option += "<option value='"+DiscountData["Code"]+"'>"+DiscountData["Name"]+"</option>";
 				                		}
@@ -1098,6 +1100,49 @@
 				}
 
 				break;
+
+				case 14 : /*경기도 우수봉사자*/
+				var limit_qty = 2;
+				var dis_price = 5000;
+
+				discount_amt = 0;
+				discount_total_amt = 0;
+				discount_info = "";
+
+				for (var s = 0; s < SelectList.length; s++){
+
+					var SelectData = SelectList.eq(s);
+
+					t_code = SelectData.data("code");
+					t_name = SelectData.data("name");
+					t_price = SelectData.data("price");
+					t_qty = SelectData.data("qty");
+
+					discount_amt = 0;
+
+					if(limit_qty > 0) {
+						if(t_code==1) {
+
+							if(t_qty <= limit_qty) {
+								discount_amt = t_qty*dis_price;
+								limit_qty = limit_qty - t_qty;
+							} else {
+								discount_amt = limit_qty*dis_price;
+								limit_qty = 0;
+							}
+
+							if(discount_info == "") {
+								discount_info += t_name + " " + numberWithCommas(discount_amt)+"원";
+							} else {
+								discount_info += ", "+ t_name + " " + numberWithCommas(discount_amt)+"원";
+							}
+							discount_total_amt += discount_amt;
+						}
+					}
+				}
+
+				break;
+
 
 			default:
 		}

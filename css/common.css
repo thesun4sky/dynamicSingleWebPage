@@ -58,6 +58,7 @@ button {cursor:pointer;}
 	-o-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+.stadium_bg > dt {margin-top: -50px; margin-left: -200px;}
 .SNS_bg > img {z-index: -1; height:auto; width: 100%; overflow: hidden;}
 .mainBG-PC {z-index: 2;}
 .mainBG-MB {position:fixed;top:0;right:0;bottom:0;left:0;z-index:1;max-width:150% !important; z-index: 1;}
@@ -183,7 +184,7 @@ button {cursor:pointer;}
 .subBack dl dt div {padding:15px 0 0 0;font-size:35px;font-weight:400;letter-spacing:0;}
 .subBack dl dd {padding:50px 0 0 0;font-size:17px;}
 .subBack dl dd:after {content: '';display:table;clear:both;}
-.subBack dl dd.txt {letter-spacing:0;font-weight:300; line-height: 1.5;}
+.subBack dl dd.txt {letter-spacing:0;font-weight:300; line-height: 1.5; word-break:keep-all;}
 .subBack .swiper-slide > img {width:100%;}
 .sub1.subBack dl dt strong span {color:#ffffff;}
 .sub2.subBack dl dt strong span {color:#ffffff;}
@@ -334,20 +335,20 @@ button {cursor:pointer;}
 .saleTable {position:relative;padding:0;height:500px;border-top:2px solid #1763ad;box-sizing:border-box;}
 .saleTable .fixedArea {position:relative;width:114px !important;height:500px;}
 .saleTable .fixedArea table thead th {color:#fff;border-bottom:1px solid #fff;border-top:0;background:#575757;}
-.saleTable .fixedArea table tbody th {height:54px;border-top:1px solid #fff;color:#fff;border-bottom:1px solid #fff;background:#575757;}
+.saleTable .fixedArea table tbody th {height:57px;border-top:1px solid #fff;color:#fff;border-bottom:1px solid #fff;background:#575757;}
 .saleTable .fixedArea table tbody tr:last-child th {height:111px !important;border-bottom:1px solid #838383;}
 .saleTable .dataAreaBack {position:absolute;left:114px;top:0;right:0;width:auto !important;height:500px;overflow:hidden;}
 .saleTable .dataAreaBack table {width:auto !important;table-layout:fixed;}
 .saleTable .dataAreaBack table thead tr th {border:1px solid #d6d6d6;border-top:0;border-bottom:1px solid #4b4b4b;background:#fff;}
-.saleTable .dataAreaBack table tbody tr td {height:44px;border:1px solid #d6d6d6;background:#fff;}
+.saleTable .dataAreaBack table tbody tr td {height:57px;border:1px solid #d6d6d6;background:#fff;}
 .saleTable .dataAreaBack table tbody tr td span {font-size:13px !important;}
 .saleTable .dataAreaBack table tbody tr:last-child td {border-bottom:1px solid #4b4b4b;}
-.saleTable .fixedArea table tbody tr th.h65 {height:75px !important}
-.saleTable .fixedArea table tbody tr th.h50 {height:65px !important}
-.saleTable .fixedArea table tbody tr th.h98 {height:108px !important}
-.saleTable .dataAreaBack table tbody tr td.h65 {height:65px !important}
-.saleTable .dataAreaBack table tbody tr td.h50 {height:55px !important}
-.saleTable .dataAreaBack table tbody tr td.h98 {height:98px !important}
+.saleTable .fixedArea table tbody tr th.h65 {height:80px !important}
+.saleTable .fixedArea table tbody tr th.h50 {height:57px !important}
+.saleTable .fixedArea table tbody tr th.h98 {height:103px !important}
+.saleTable .dataAreaBack table tbody tr td.h65 {height:80px !important}
+.saleTable .dataAreaBack table tbody tr td.h50 {height:57px !important}
+.saleTable .dataAreaBack table tbody tr td.h98 {height:103px !important}
 .saleTable #scroller,
 .saleTable #scroller2,
 .saleTable #scroller3 {position:absolute;
@@ -368,8 +369,8 @@ button {cursor:pointer;}
 	-ms-text-size-adjust: none;
 	-o-text-size-adjust: none;
 	text-size-adjust: none;}
-.saleTable #scroller {width:3056px;}
-.saleTable #scroller2 {width:3056px;}
+.saleTable #scroller {width:2175px;}
+.saleTable #scroller2 {width:2175px;}
 .saleTable #scroller3 {width:840px;}
 .saleTable + p {color:#ff0303;text-align:right;padding:5px 0 0 0;}
 /* 예상가격 */
@@ -425,10 +426,10 @@ button {cursor:pointer;}
 .exCostLayout .exCost2 .gridSet.grid2 .gridItem li {counter-increment:item;padding:3px 0;font-weight:normal;font-size:14px;}
 .exCostLayout .exCost2 .gridSet.grid2 .gridItem li:before {content:"선택"counters(item, ".") ". ";}
 .exCostLayout .exCost2 h4 p {display:inline-block;float:right;font-weight:normal;font-size:14px;}
-.exCostLayout .exCost2 h4.second {padding-top:22px;}
+.exCostLayout .exCost2 h4.second {padding:22px 0 25px 0; }
 .exCostLayout .exCost2 .selectSet {width:100%;}
 .exCostLayout .exCost2 .selectSet select {font-size:18px;}
-.exCostLayout .exCost2 div.total {padding:20px 0 0;height:55px;font-size:16px;}
+.exCostLayout .exCost2 div.total {padding:10px 0 0;height:55px;font-size:16px;}
 .exCostLayout .exCost2 div.total strong {color:#ff0303;font-size:24px;}
 .exCostLayout .exCost3 h4 strong {display:inline-block;margin:-5px 0 0 15px;color:#ff0303;font-size:24px;line-height:1;vertical-align:middle;}
 .exCostLayout .exCost3 .exLast {padding:12px 20px;border:1px solid #c5c5c5;border-width:1px 0;box-sizing:border-box;background:#f4f4f4;}
@@ -453,6 +454,7 @@ button {cursor:pointer;}
 	.subSliderBack {width:580px;}
 }
 @media screen and (max-width:1430px){
+	.stadium_bg > dt {margin-top: -30px; margin-left: -100px;}
 	.swiper-slide-road img {width: 45%;}
 	.pCase {display:none;}
 	.mCase {display:inline-block;}
@@ -513,13 +515,13 @@ button {cursor:pointer;}
 	.saleTable {height:418px;}
 	.PricePop .popDetail div.saleTable table th {height:38px;}
 	.saleTable .fixedArea table tbody th {height:38px;}
-	.saleTable .dataAreaBack table tbody tr td {height:28px}
-	.saleTable .fixedArea table tbody tr th.h65 {height:70px !important}
-	.saleTable .fixedArea table tbody tr th.h50 {height:60px !important}
-	.saleTable .fixedArea table tbody tr th.h98 {height:90px !important}
-	.saleTable .dataAreaBack table tbody tr td.h65 {height:60px !important}
-	.saleTable .dataAreaBack table tbody tr td.h50 {height:50px !important}
-	.saleTable .dataAreaBack table tbody tr td.h98 {height:80px !important}
+	.saleTable .dataAreaBack table tbody tr td {height:38px}
+	.saleTable .fixedArea table tbody tr th.h65 {height:65px !important}
+	.saleTable .fixedArea table tbody tr th.h50 {height:47px !important}
+	.saleTable .fixedArea table tbody tr th.h98 {height:83px !important}
+	.saleTable .dataAreaBack table tbody tr td.h65 {height:65px !important}
+	.saleTable .dataAreaBack table tbody tr td.h50 {height:47px !important}
+	.saleTable .dataAreaBack table tbody tr td.h98 {height:83px !important}
 	.saleTable + p {font-size:12px;}
 	.saleTable .fixedArea {width:75px !important;}
 	.saleTable .dataAreaBack {left:75px !important;}
@@ -562,7 +564,7 @@ button {cursor:pointer;}
 	.exCostLayout .exCost3 .exLast dl {display:block;padding:10px 5px;box-sizing:border-box;border-bottom:1px solid #e1e1e1;}
 	.exCostLayout .exCost3 .exLast dl dt {display:block;width:100%;font-size:14px;}
 	.exCostLayout .exCost3 .exLast dl dd {display:block;font-size:13px;}
-	.exCostLayout .exCost3 p {padding:15px 0 0;height:45px;font-size:12px;}
+	.exCostLayout .exCost3 p {padding:15px 0 0;height:60px;font-size:12px;}
 
 	.SNStap {color:white; }
 	.SNStap h1 {font-size: 20px; font-weight: 700; color:white; padding: 20px;}
@@ -578,6 +580,7 @@ button {cursor:pointer;}
 }
 /* media 함수는 아래순서가 우선적용되지만 혹시 바뀔경우를 대비해 !imporant 적용함 */
 @media screen and (max-width:650px){
+		.stadium_bg > dt {margin-top: -20px; margin-left: 0px;}
 .main h1 img {max-width: 350px;}
 
 	/* 사이드 메뉴 -> 아래 하단바로 내리기, 비율에 맞춰서 (100% 나누기 6)  */
@@ -596,7 +599,7 @@ button {cursor:pointer;}
 	/* 오른쪽 상단 로고 top:0; right:5% , 사이즈 축소 90px; */
 	.logo {position:fixed;top:0px !important;right:5% !important;z-index:99;opacity: 0; transition: opacity 0.5s;
 	}
-	.logo img {width:90px !important;height:auto;
+	.logo img {display:none;
 	}
 .mainbtn {width:100% !important;}
 .mainbtn-gird {padding-left:20px !important; padding-right:20px !important; padding-bottom:60px !important;}
@@ -620,7 +623,7 @@ button {cursor:pointer;}
 	.swiper-slide-road img {
 		width: 75%;
 		position: relative;
-		left: 20%;
+		left: 10%;
 		display: block;
 		float: left;
 		margin-right: 10%;
@@ -655,7 +658,7 @@ button {cursor:pointer;}
 
 	.swiper-container-supporter {
 		position: relative !important;
-		left: 10% !important;
+		left: 8% !important;
 		padding-top: 50px;
 		padding-bottom: 50px;
 		position:absolute;
